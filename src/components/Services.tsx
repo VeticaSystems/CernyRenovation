@@ -2,27 +2,39 @@
 const services = [
   {
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400',
-    title: 'Kitchen Remodeling',
-    description: 'Custom cabinets, quartz countertops, and energy-efficient lighting designed for your lifestyle.',
+    title: 'Kitchen Renovation',
+    description: 'Complete kitchen transformations with custom cabinets, countertops, and modern appliances.',
     link: '#kitchen'
   },
   {
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400',
-    title: 'Bathroom Remodel',
-    description: 'Modern fixtures, spa-like finishes, and smart storage solutions for your home.',
+    title: 'Bathroom Renovation',
+    description: 'Full bathroom remodels with modern fixtures, tiling, and luxury finishes.',
     link: '#bathroom'
   },
   {
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400',
-    title: 'Home Additions',
-    description: 'Seamless expansions and custom extensions to increase living space and home value.',
-    link: '#additions'
+    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400',
+    title: 'Painting Services',
+    description: 'Professional interior and exterior painting with premium paints and expert techniques.',
+    link: '#painting'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=400',
+    title: 'Tile Services',
+    description: 'Expert tile installation for floors, walls, backsplashes, and bathroom surfaces.',
+    link: '#tile'
   },
   {
     image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400',
-    title: 'Outdoor Living',
-    description: 'Beautiful decks, patios, and outdoor spaces that extend your home\'s comfort outside.',
-    link: '#outdoor'
+    title: 'Fencing',
+    description: 'Custom fencing solutions for privacy, security, and aesthetic enhancement of your property.',
+    link: '#fencing'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400',
+    title: 'Decking and Patio',
+    description: 'Beautiful outdoor living spaces with custom decks, patios, and entertainment areas.',
+    link: '#decking'
   }
 ];
 
@@ -34,7 +46,7 @@ const Services = () => {
           Our Core Services
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
