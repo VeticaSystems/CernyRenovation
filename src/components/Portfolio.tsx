@@ -1,32 +1,32 @@
 
 const portfolioItems = [
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/kitchen-before-after-1.jpg',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400',
     title: 'Kitchen Before & After',
     category: 'Kitchen'
   },
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/bathroom-transformation-1.jpg',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400',
     title: 'Bathroom Transformation',
     category: 'Bathroom'
   },
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/outdoor-living-space-1.jpg',
+    image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400',
     title: 'Outdoor Living Space',
     category: 'Outdoor'
   },
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/master-suite-addition.jpg',
+    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400',
     title: 'Master Suite Addition',
     category: 'Addition'
   },
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/modern-kitchen-remodel.jpg',
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400',
     title: 'Modern Kitchen Remodel',
     category: 'Kitchen'
   },
   {
-    image: 'https://www.cernyremodeling.com/images/portfolio/luxury-bathroom.jpg',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400',
     title: 'Luxury Bathroom',
     category: 'Bathroom'
   }
