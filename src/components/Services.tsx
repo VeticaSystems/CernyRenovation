@@ -1,25 +1,25 @@
 
 const services = [
   {
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400',
+    image: 'https://www.cernyremodeling.com/images/services/kitchen-remodeling.jpg',
     title: 'Kitchen Remodeling',
     description: 'Custom cabinets, quartz countertops, and energy-efficient lighting designed for your lifestyle.',
     link: '#kitchen'
   },
   {
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400',
+    image: 'https://www.cernyremodeling.com/images/services/bathroom-remodeling.jpg',
     title: 'Bathroom Remodel',
     description: 'Modern fixtures, spa-like finishes, and smart storage solutions for your home.',
     link: '#bathroom'
   },
   {
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400',
+    image: 'https://www.cernyremodeling.com/images/services/home-additions.jpg',
     title: 'Home Additions',
     description: 'Seamless expansions and custom extensions to increase living space and home value.',
     link: '#additions'
   },
   {
-    image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400',
+    image: 'https://www.cernyremodeling.com/images/services/outdoor-living.jpg',
     title: 'Outdoor Living',
     description: 'Beautiful decks, patios, and outdoor spaces that extend your home\'s comfort outside.',
     link: '#outdoor'

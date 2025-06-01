@@ -3,19 +3,19 @@ import { useState, useEffect } from 'react';
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600',
+    image: 'https://www.cernyremodeling.com/images/slider/slide1.jpg',
     title: 'Transform Your Home Today',
     subtitle: 'Expert Design · Build · Remodel',
     cta: 'Get Your Free Estimate'
   },
   {
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600',
+    image: 'https://www.cernyremodeling.com/images/slider/slide2.jpg',
     title: 'Modern Kitchens, Built to Last',
     subtitle: 'Quality Craftsmanship Since 1985',
     cta: 'View Our Services'
   },
   {
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
+    image: 'https://www.cernyremodeling.com/images/slider/slide3.jpg',
     title: 'Bathrooms That Feel Like Home',
     subtitle: 'Attention to Detail at Every Step',
     cta: 'See Our Portfolio'
