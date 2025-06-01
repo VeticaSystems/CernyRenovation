@@ -37,12 +37,6 @@ const Header = () => {
             <a href="#contact" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
               Contact
             </a>
-            <a 
-              href="#quote" 
-              className="bg-cerny-orange text-white px-6 py-3 rounded font-semibold hover:bg-cerny-orange-dark transition-colors"
-            >
-              Free Quote
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,12 +66,6 @@ const Header = () => {
               </a>
               <a href="#contact" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
                 Contact
-              </a>
-              <a 
-                href="#quote" 
-                className="bg-cerny-orange text-white px-6 py-3 rounded font-semibold hover:bg-cerny-orange-dark transition-colors text-center"
-              >
-                Free Quote
               </a>
             </div>
           </div>
