@@ -9,8 +9,15 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50">
       <div className="container max-w-6xl mx-auto px-4">
         <nav className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-cerny-navy font-montserrat">
-            Cerny Remodeling
+          <div className="flex flex-col items-center">
+            <img 
+              src="/lovable-uploads/e60193fb-5df7-49a0-bdbf-0c7a1f6126b2.png" 
+              alt="Cerny Remodeling Logo" 
+              className="h-12 w-auto mb-1"
+            />
+            <div className="text-xl font-bold text-cerny-navy font-montserrat">
+              Cerny Remodeling
+            </div>
           </div>
           
           {/* Desktop Menu */}
