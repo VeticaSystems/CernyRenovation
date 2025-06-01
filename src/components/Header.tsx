@@ -15,26 +15,26 @@ const Header = () => {
               alt="Cerny Remodeling Logo" 
               className="h-12 w-auto mb-1"
             />
-            <div className="text-xl font-bold text-cerny-navy font-montserrat">
+            <div className="text-xl font-bold text-light-purple font-montserrat">
               Cerny Remodeling
             </div>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+            <a href="#" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
               Home
             </a>
-            <a href="#services" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+            <a href="#services" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
               Services
             </a>
-            <a href="#portfolio" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+            <a href="#portfolio" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
               Portfolio
             </a>
-            <a href="#about" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+            <a href="#about" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
               About
             </a>
-            <a href="#contact" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+            <a href="#contact" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
               Contact
             </a>
           </div>
@@ -52,19 +52,19 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col gap-4">
-              <a href="#" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+              <a href="#" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
                 Home
               </a>
-              <a href="#services" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+              <a href="#services" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
                 Services
               </a>
-              <a href="#portfolio" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+              <a href="#portfolio" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
                 Portfolio
               </a>
-              <a href="#about" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+              <a href="#about" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
                 About
               </a>
-              <a href="#contact" className="font-semibold text-gray-700 hover:text-cerny-navy transition-colors">
+              <a href="#contact" className="font-semibold text-tenorite hover:text-light-purple transition-colors">
                 Contact
               </a>
             </div>

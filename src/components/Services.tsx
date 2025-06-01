@@ -30,7 +30,7 @@ const Services = () => {
   return (
     <section id="services" className="bg-white py-16">
       <div className="container max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-cerny-navy font-montserrat">
+        <h2 className="text-4xl font-bold text-center mb-12 text-light-purple font-montserrat">
           Our Core Services
         </h2>
         
@@ -46,10 +46,10 @@ const Services = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-cerny-navy font-montserrat">
+                <h3 className="text-xl font-semibold mb-3 text-light-purple font-montserrat">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                <p className="text-tenorite mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
                 <a

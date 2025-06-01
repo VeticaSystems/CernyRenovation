@@ -67,7 +67,9 @@ export default {
 				'cerny-orange': '#d99f68',
 				'cerny-orange-dark': '#bf8a5a',
 				'cerny-light-gray': '#f4f4f4',
-				'cerny-card-gray': '#f9f9f9'
+				'cerny-card-gray': '#f9f9f9',
+				'light-purple': '#b19cd9',
+				'tenorite': '#6b7280'
 			},
 			fontFamily: {
 				'montserrat': ['Montserrat', 'sans-serif'],

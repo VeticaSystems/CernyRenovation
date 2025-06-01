@@ -9,10 +9,10 @@ const ContactForm = () => {
     <section id="contact" className="bg-cerny-light-gray py-16">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-cerny-navy font-montserrat">
+          <h2 className="text-4xl font-bold mb-4 text-light-purple font-montserrat">
             Get Your FREE Consultation & Quote
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-tenorite max-w-2xl mx-auto">
             Transform your vision into reality. Our experts will provide a detailed project assessment and personalized quote at no cost to you.
           </p>
         </div>

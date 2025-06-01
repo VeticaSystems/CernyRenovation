@@ -57,7 +57,7 @@ const HeroCarousel = () => {
                 {slide.subtitle}
               </p>
               <a
-                href="#quote"
+                href="#contact"
                 className="inline-block bg-cerny-orange text-white px-8 py-4 rounded font-semibold text-lg hover:bg-cerny-orange-dark transition-colors"
               >
                 {slide.cta}

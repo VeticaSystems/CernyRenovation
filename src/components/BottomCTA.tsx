@@ -5,10 +5,10 @@ const BottomCTA = () => {
   return (
     <div className="text-center mt-12">
       <div className="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto">
-        <h3 className="text-xl font-semibold mb-2 text-cerny-navy">
+        <h3 className="text-xl font-semibold mb-2 text-light-purple">
           Need to speak with someone right away?
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-tenorite mb-4">
           Call us now for immediate assistance and to schedule your free consultation
         </p>
         <a 
