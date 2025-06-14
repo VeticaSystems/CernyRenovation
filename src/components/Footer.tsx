@@ -1,64 +1,33 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-300 py-12">
-      <div className="container max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-cerny-orange font-montserrat">
-              Contact Us
-            </h4>
-            <ul className="space-y-2">
-              <li className="text-tenorite">Phone: (555) 123-4567</li>
-              <li className="text-tenorite">Email: info@cernyremodeling.com</li>
-              <li className="text-tenorite">Address: 123 Main St, Anytown, USA</li>
-            </ul>
+    <footer className="bg-gray-900 text-gray-100 py-16">
+      <div className="container mx-auto flex flex-col items-center px-4">
+        <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start md:space-x-24 max-w-3xl">
+          {/* Contact Us */}
+          <div className="mb-10 md:mb-0 text-center md:text-left">
+            <h4 className="text-2xl font-semibold mb-3 text-white font-montserrat">Contact Us</h4>
+            <p className="text-lg text-gray-300 mb-1">
+              Phone: <span className="whitespace-nowrap">(555) 123-4567</span>
+            </p>
+            <p className="text-lg text-gray-300 break-all">
+              Email: info@cernyremodeling.com
+            </p>
           </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-cerny-orange font-montserrat">
-              Quick Links
+
+          {/* Connect & Verify */}
+          <div className="text-center md:text-left">
+            <h4 className="text-2xl font-semibold mb-3 text-white font-montserrat">
+              Connect &amp; Verify
             </h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-tenorite hover:text-white transition-colors">Home</a></li>
-              <li><a href="#services" className="text-tenorite hover:text-white transition-colors">Services</a></li>
-              <li><a href="#portfolio" className="text-tenorite hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#about" className="text-tenorite hover:text-white transition-colors">About</a></li>
-              <li><a href="#contact" className="text-tenorite hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-cerny-orange font-montserrat">
-              Our Services
-            </h4>
-            <ul className="space-y-2">
-              <li><a href="#kitchen" className="text-tenorite hover:text-white transition-colors">Kitchen Remodeling</a></li>
-              <li><a href="#bathroom" className="text-tenorite hover:text-white transition-colors">Bathroom Remodel</a></li>
-              <li><a href="#additions" className="text-tenorite hover:text-white transition-colors">Home Additions</a></li>
-              <li><a href="#outdoor" className="text-tenorite hover:text-white transition-colors">Outdoor Living</a></li>
-            </ul>
-          </div>
-          
-          {/* Connect */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-cerny-orange font-montserrat">
-              Connect & Verify
-            </h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-tenorite hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="#" className="text-tenorite hover:text-white transition-colors">Houzz</a></li>
-              <li><a href="#" className="text-tenorite hover:text-white transition-colors">Instagram</a></li>
-              <li><span className="text-green-400">Licensed & Insured ✓</span></li>
-            </ul>
+            <p className="text-lg text-green-400 font-medium whitespace-nowrap">
+              Licensed &amp; Insured &#10003;
+            </p>
           </div>
         </div>
-        
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-sm text-tenorite">
+
+        <div className="mt-12 w-full text-center">
+          <p className="text-base text-gray-400 tracking-wide">
             © 2025 Cerny Remodeling LLC. All rights reserved.
           </p>
         </div>
@@ -68,3 +37,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
