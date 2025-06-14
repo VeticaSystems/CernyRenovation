@@ -52,6 +52,8 @@ const HeroCarousel = () => {
   // Preload all images, set loaded/error state per image
   useEffect(() => {
     slides.forEach((slide, index) => {
+      // Debug: log which images are being preloaded
+      console.log("Preloading image:", slide.image, "at index:", index);
       preloadImage(slide.image).then((result) => {
         setLoadedImages((prev) => {
           const updated = [...prev];
@@ -63,6 +65,8 @@ const HeroCarousel = () => {
           updated[index] = !result;
           return updated;
         });
+        // Debug: log preload results
+        console.log(`Image at index ${index}:`, slide.image, "Loaded:", result);
       });
     });
   }, []);
