@@ -9,7 +9,8 @@ const About = () => {
         {/* Josef Cerny Profile Section */}
         <div className="flex flex-col md:flex-row md:items-start md:gap-8 mb-8">
           {/* Clean photo styling with black background to hide white border */}
-          <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
+-         <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
++         <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0 mt-4">
             <div className="w-44 h-52 rounded-xl overflow-hidden bg-black">
               <img
                 src="/lovable-uploads/49700280-9e5d-468c-b2dd-d17bd12abef2.png"
