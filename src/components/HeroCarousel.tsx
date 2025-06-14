@@ -15,8 +15,8 @@ const slides: Slide[] = [
     subtitle: '',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
-    title: 'Bathrooms That Feel Like Home',
+    image: '/lovable-uploads/9f594283-5d13-4082-845f-57ce572ce8b6.png', // Updated to user upload
+    title: 'Light-Filled Spaces For Modern Living', // Updated title
     subtitle: '',
   }
 ];
