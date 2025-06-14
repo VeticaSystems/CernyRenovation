@@ -1,7 +1,7 @@
 
 import ContactInfo from './ContactInfo';
 import QuoteForm from './QuoteForm';
-import BottomCTA from './BottomCTA';
+// Removed: import BottomCTA from './BottomCTA';
 import TrustIndicators from './TrustIndicators';
 
 const ContactForm = () => {
@@ -30,11 +30,10 @@ const ContactForm = () => {
             <QuoteForm />
           </div>
         </div>
-        <BottomCTA />
+        {/* Removed <BottomCTA /> */}
       </div>
     </section>
   );
 };
 
 export default ContactForm;
-
