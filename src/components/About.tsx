@@ -2,11 +2,11 @@ const About = () => {
   return (
     <section id="about" className="bg-white py-16">
       <div className="container max-w-4xl mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-12 text-light-purple font-montserrat">
+        <h2 className="text-4xl font-bold text-center mb-12 text-light-purple font-montserrat">
           About Us
         </h2>
         
-        <div className="prose prose-lg max-w-none text-tenorite leading-relaxed">
+        <div className="prose prose-lg text-xl max-w-none text-tenorite leading-relaxed">
           <p className="mb-6">
             Since opening our doors in 2011, Cerny Home Remodeling has transformed over a hundred Northern Virginia residences into spaces our clients truly love. As a fully licensed, bonded, and insured team, we bring peace of mind—and a relentless commitment to quality—to every renovation we undertake.
           </p>
