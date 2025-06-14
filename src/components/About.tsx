@@ -7,13 +7,13 @@ const About = () => {
         </h2>
         {/* Josef Cerny Profile Section */}
         <div className="flex flex-col md:flex-row md:items-start md:gap-8 mb-8">
-          {/* Photo with dark frame */}
+          {/* Clean photo styling without unwanted borders or colors */}
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
-            <div className="bg-cerny-navy border-4 border-cerny-navy rounded-xl p-1 w-44 h-52 flex items-center justify-center shadow-lg">
+            <div className="rounded-xl overflow-hidden w-44 h-52 shadow-lg">
               <img
                 src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
                 alt="Josef Cerny, Founder & Lead Technician"
-                className="w-40 h-48 object-contain rounded-lg bg-transparent"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
