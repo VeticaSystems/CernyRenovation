@@ -11,7 +11,7 @@ const About = () => {
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
             <div className="rounded-xl overflow-hidden w-44 h-52 shadow-lg">
               <img
-                src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
+                src="/lovable-uploads/f72aeef1-97b3-499c-9168-35a0df4863fa.png"
                 alt="Josef Cerny, Founder & Lead Technician"
                 className="w-full h-full object-cover"
               />
