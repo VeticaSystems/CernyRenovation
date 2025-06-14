@@ -12,7 +12,7 @@ const About = () => {
             <img
               src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
               alt="Josef Cerny, Founder & Lead Technician"
-              className="w-40 h-40 object-cover object-top rounded-lg border border-gray-200 shadow-md"
+              className="w-40 h-40 object-cover object-center rounded-lg border border-gray-200 shadow-md"
             />
           </div>
           {/* Bio */}
