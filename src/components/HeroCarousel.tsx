@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // --- 1. Add TypeScript interfaces ---
@@ -33,6 +32,8 @@ const preloadImage = (url: string) =>
 
 const FALLBACK_IMAGE = '/fallback-image.jpg';
 
+const PROGRESS_DURATION = 5000; // 5 seconds
+
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [paused, setPaused] = useState<boolean>(false);
@@ -45,6 +46,7 @@ const HeroCarousel = () => {
   const timerRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLElement | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [progress, setProgress] = useState<number>(0);
 
   // --- 5. Improved loading states ---
   // Preload all images, set loaded/error state per image
@@ -151,6 +153,35 @@ const HeroCarousel = () => {
     }
   }, []);
 
+  // Animate progress bar for current slide
+  useEffect(() => {
+    if (paused) {
+      setProgress(0);
+      return;
+    }
+    setProgress(0);
+    let frame: number;
+    let start: number | null = null;
+
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const newProgress = Math.min((elapsed / PROGRESS_DURATION) * 100, 100);
+      setProgress(newProgress);
+      if (elapsed < PROGRESS_DURATION) {
+        frame = requestAnimationFrame(animate);
+      }
+    };
+
+    frame = requestAnimationFrame(animate);
+
+    return () => {
+      setProgress(0);
+      cancelAnimationFrame(frame);
+    };
+    // Reset progress when currentSlide or paused changes
+  }, [currentSlide, paused]);
+
   return (
     <section
       className="relative w-full h-[70vh] overflow-hidden outline-none"
@@ -250,11 +281,10 @@ const HeroCarousel = () => {
       {/* Progress bar for auto-advancing (optically shows timer) */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-white/30 rounded overflow-hidden z-50">
         <div
-          className={`bg-cerny-orange h-1 transition-all duration-5000`}
-          key={currentSlide + (paused ? '-paused' : '')}
+          className="bg-light-purple h-1 transition-all duration-100"
           style={{
-            width: paused ? '0%' : '100%',
-            transitionDuration: paused ? '0ms' : '5000ms'
+            width: `${paused ? 0 : progress}%`,
+            transition: paused ? 'none' : 'width 80ms linear'
           }}
         />
       </div>
