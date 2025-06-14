@@ -9,11 +9,12 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:items-start md:gap-8 mb-8">
           {/* Clean photo styling with black background to hide white border */}
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
-            <div className="rounded-xl overflow-hidden w-44 h-52 shadow-lg bg-black">
+            <div className="w-44 h-52 rounded-xl overflow-hidden bg-black">
               <img
                 src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
                 alt="Josef Cerny, Founder & Lead Technician"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover block"
+                style={{ display: 'block' }} // prevents inline whitespace artifacts
               />
             </div>
           </div>
