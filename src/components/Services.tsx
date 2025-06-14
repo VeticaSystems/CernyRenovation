@@ -1,5 +1,7 @@
 
 import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -42,35 +44,39 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="bg-white py-16">
+    <section id="services" className="bg-zinc-900 py-16">
       <div className="container max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-light-purple font-montserrat">
           Attention to Detail at Every Step
         </h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-cerny-card-gray rounded-lg overflow-hidden shadow-lg hover:transform hover:-translate-y-2 transition-all duration-300"
+              className="bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-xl flex flex-col transition-all duration-300 hover:scale-[1.025] hover:border-cerny-orange"
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-32 object-cover"
+                className="w-full h-40 object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-light-purple font-montserrat">
-                  {service.title}
-                </h3>
-                <p className="text-tenorite mb-4 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-                <Link
-                  to={service.link}
-                  className="text-cerny-orange font-semibold text-sm hover:text-cerny-orange-dark transition-colors"
-                >
-                  Learn More →
+              <div className="flex flex-col flex-1 justify-between p-6">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-3 text-light-purple font-montserrat">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6 text-base leading-relaxed font-montserrat">
+                    {service.description}
+                  </p>
+                </div>
+                <Link to={service.link} className="mt-auto block">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-between border-cerny-orange text-cerny-orange hover:bg-cerny-orange hover:text-white transition-colors font-semibold text-base rounded-lg py-2"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -82,3 +88,4 @@ const Services = () => {
 };
 
 export default Services;
+
