@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import FormFields from './FormFields';
 
@@ -74,12 +74,6 @@ const QuoteForm = () => {
 
   return (
     <Card className="shadow-xl">
-      <CardHeader className="bg-gradient-to-r from-cerny-navy to-cerny-orange text-white">
-        <CardTitle className="text-2xl">Request Your FREE Quote</CardTitle>
-        <CardDescription className="text-gray-100">
-          Fill out our detailed form below and receive a comprehensive quote within 24 hours. All consultations are completely free with no obligation.
-        </CardDescription>
-      </CardHeader>
       <CardContent className="p-6">
         <form onSubmit={handleSubmit}>
           <FormFields
@@ -107,3 +101,4 @@ const QuoteForm = () => {
 };
 
 export default QuoteForm;
+
