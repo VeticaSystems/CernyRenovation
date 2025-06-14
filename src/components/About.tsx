@@ -1,3 +1,4 @@
+
 const About = () => {
   return (
     <section id="about" className="bg-white py-16">
@@ -11,7 +12,7 @@ const About = () => {
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
             <div className="w-44 h-52 rounded-xl overflow-hidden bg-black">
               <img
-                src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
+                src="/lovable-uploads/49700280-9e5d-468c-b2dd-d17bd12abef2.png"
                 alt="Josef Cerny, Founder & Lead Technician"
                 className="w-full h-full object-cover block"
                 style={{ display: 'block' }} // prevents inline whitespace artifacts
@@ -72,3 +73,4 @@ const About = () => {
 };
 
 export default About;
+
