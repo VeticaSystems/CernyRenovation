@@ -3,14 +3,7 @@ import { useState, useEffect } from 'react';
 
 const slides = [
   {
-    // Replaced with user-uploaded window image
-    image: '/lovable-uploads/4eb5d1b7-5c12-4617-95b8-73cf65f4e36b.png',
-    title: 'Transform Your Home Today',
-    subtitle: 'Expert Design · Build · Remodel',
-    // Removed CTA button/banner
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600',
+    image: '/lovable-uploads/b0b02fa0-da09-4b0b-868d-e7c065c47d5b.png',
     title: 'Modern Kitchens, Built to Last',
     subtitle: 'Quality Craftsmanship Since 1985',
   },
@@ -72,3 +65,4 @@ const HeroCarousel = () => {
 };
 
 export default HeroCarousel;
+
