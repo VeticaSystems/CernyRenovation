@@ -42,7 +42,6 @@ const HeroCarousel = () => {
             <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
               <h1 className="text-5xl md:text-6xl font-bold mb-4 font-montserrat">{slide.title}</h1>
               <p className="text-xl md:text-2xl mb-8 font-montserrat text-tenorite">{slide.subtitle}</p>
-              {/* CTA/Button Removed */}
             </div>
           </div>
         </div>
