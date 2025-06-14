@@ -10,13 +10,13 @@ interface Slide {
 // --- Slides array ---
 const slides: Slide[] = [
   {
-    image: '/lovable-uploads/b27b4e29-6e0e-48ef-9c88-60280ab017a8.png',
+    image: '/lovable-uploads/9f594283-5d13-4082-845f-57ce572ce8b6.png', // User's bright uploaded image
     title: '',
     subtitle: '',
   },
   {
-    image: '/lovable-uploads/9f594283-5d13-4082-845f-57ce572ce8b6.png', // Updated to user upload
-    title: 'Light-Filled Spaces For Modern Living', // Updated title
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600', // Original bathroom pic
+    title: 'Bathrooms That Feel Like Home',
     subtitle: '',
   }
 ];
