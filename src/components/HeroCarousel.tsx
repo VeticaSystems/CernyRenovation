@@ -202,6 +202,9 @@ const HeroCarousel = () => {
             ? FALLBACK_IMAGE
             : undefined; // loading
 
+        // Determine if this is the first slide (window image)
+        const isWindowSlide = index === 0;
+
         return (
           <div
             key={index}
@@ -209,42 +212,91 @@ const HeroCarousel = () => {
               index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
             aria-hidden={index !== currentSlide}
-            style={{
-              backgroundImage: showImage ? `url(${showImage})` : undefined,
-              backgroundSize: 'cover', // fill container, minimal cropping, keeps ratio
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundColor: '#18181b', // fallback behind transparent images
-            }}
+            style={
+              isWindowSlide && showImage
+                ? {
+                    // Blurred background behind
+                    background: `
+                      url(${showImage}) center/cover no-repeat
+                    `,
+                    position: 'absolute',
+                    inset: 0,
+                  }
+                : {
+                    backgroundImage: showImage ? `url(${showImage})` : undefined,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundColor: '#18181b',
+                  }
+            }
           >
-            {/* Loading skeleton for image */}
-            {!showImage && (
-              <div className="w-full h-full flex justify-center items-center bg-cerny-light-gray">
-                <div className="rounded-full w-20 h-20 animate-pulse bg-muted" />
-              </div>
-            )}
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-            {/* Slide text overlay */}
-            {index !== 0 && (slide.title || slide.subtitle) && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
-                  {slide.title && (
-                    <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-bold mb-4 font-montserrat">
-                      {slide.title}
-                    </h1>
-                  )}
-                  {slide.subtitle && (
-                    <p className="text-[clamp(1rem,2vw,1.5rem)] mb-8 font-montserrat text-tenorite">
-                      {slide.subtitle}
-                    </p>
-                  )}
+            {/* Custom fore/back for window slide */}
+            {isWindowSlide && showImage ? (
+              <>
+                {/* Blurred background overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: `url(${showImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'blur(24px) brightness(0.7)',
+                    zIndex: 1
+                  }}
+                  aria-hidden="true"
+                />
+                {/* Foreground image centered, original ratio */}
+                <div className="absolute inset-0 flex justify-center items-center z-10">
+                  <img
+                    src={showImage}
+                    alt=""
+                    className="max-h-[90%] max-w-[90%] object-contain rounded-2xl shadow-2xl border-2 border-white/40 bg-black/10"
+                    draggable={false}
+                  />
                 </div>
-              </div>
+                {/* Overlay for color tone and darkness */}
+                <div className="absolute inset-0 bg-black/40 z-20" />
+              </>
+            ) : (
+              // Default slide code (for non-window images, e.g. bathroom)
+              <>
+                {/* Loading skeleton for image */}
+                {!showImage && (
+                  <div className="w-full h-full flex justify-center items-center bg-cerny-light-gray">
+                    <div className="rounded-full w-20 h-20 animate-pulse bg-muted" />
+                  </div>
+                )}
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40" />
+                {/* Slide text overlay */}
+                {index !== 0 && (slide.title || slide.subtitle) && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
+                      {slide.title && (
+                        <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-bold mb-4 font-montserrat">
+                          {slide.title}
+                        </h1>
+                      )}
+                      {slide.subtitle && (
+                        <p className="text-[clamp(1rem,2vw,1.5rem)] mb-8 font-montserrat text-tenorite">
+                          {slide.subtitle}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+                {/* Paused badge */}
+                {index === currentSlide && paused && (
+                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow">
+                    Paused
+                  </div>
+                )}
+              </>
             )}
-            {/* Paused badge */}
-            {index === currentSlide && paused && (
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow">
+            {/* Pause badge for window image */}
+            {isWindowSlide && index === currentSlide && paused && (
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow z-50">
                 Paused
               </div>
             )}
