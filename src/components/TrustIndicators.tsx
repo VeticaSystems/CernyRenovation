@@ -30,17 +30,6 @@ const TrustIndicators = () => {
         </div>
       </div>
 
-      {/* Social Proof */}
-      <div className="text-center p-4 bg-gray-50 rounded-lg">
-        <div className="flex justify-center items-center mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          ))}
-          <span className="ml-2 text-sm font-semibold text-tenorite">4.9/5</span>
-        </div>
-        <p className="text-sm text-tenorite">Based on 50+ verified reviews</p>
-      </div>
-
       {/* Awards */}
       <div className="text-center">
         <div className="flex justify-center items-center mb-2">
@@ -54,4 +43,3 @@ const TrustIndicators = () => {
 };
 
 export default TrustIndicators;
-
