@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 
 const slides = [
   {
-    image: '/lovable-uploads/b0b02fa0-da09-4b0b-868d-e7c065c47d5b.png',
-    title: 'Modern Kitchens, Built to Last',
-    subtitle: 'Quality Craftsmanship Since 1985',
+    image: '/lovable-uploads/b27b4e29-6e0e-48ef-9c88-60280ab017a8.png',
+    title: '', // No title for the window image slide.
+    subtitle: '',
   },
   {
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
@@ -39,10 +39,16 @@ const HeroCarousel = () => {
         >
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 font-montserrat">{slide.title}</h1>
-              <p className="text-xl md:text-2xl mb-8 font-montserrat text-tenorite">{slide.subtitle}</p>
-            </div>
+            {(slide.title || slide.subtitle) && (
+              <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
+                {slide.title && (
+                  <h1 className="text-5xl md:text-6xl font-bold mb-4 font-montserrat">{slide.title}</h1>
+                )}
+                {slide.subtitle && (
+                  <p className="text-xl md:text-2xl mb-8 font-montserrat text-tenorite">{slide.subtitle}</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
       ))}
