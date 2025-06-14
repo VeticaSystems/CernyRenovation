@@ -1,5 +1,5 @@
 
-import { Star, Shield, Award, Users } from 'lucide-react';
+import { Star, Shield, Award } from 'lucide-react';
 
 const TrustIndicators = () => {
   return (
@@ -41,17 +41,6 @@ const TrustIndicators = () => {
         <p className="text-sm text-tenorite">Based on 50+ verified reviews</p>
       </div>
 
-      {/* Urgency Element */}
-      <div className="bg-cerny-orange/10 border border-cerny-orange/20 p-4 rounded-lg">
-        <div className="flex items-center mb-2">
-          <Users className="w-5 h-5 text-cerny-orange mr-2" />
-          <span className="font-semibold text-light-purple">Limited Availability</span>
-        </div>
-        <p className="text-sm text-tenorite">
-          Only 3 consultation slots available this month. Book your free quote today!
-        </p>
-      </div>
-
       {/* Awards */}
       <div className="text-center">
         <div className="flex justify-center items-center mb-2">
@@ -65,3 +54,4 @@ const TrustIndicators = () => {
 };
 
 export default TrustIndicators;
+
