@@ -230,12 +230,16 @@ const HeroCarousel = () => {
           >
             {isWindowSlide && showImage ? (
               <>
-                {/* Show the full image, with object-contain to keep entire photo visible */}
+                {/* Window image: use object-cover so it stretches and fills the hero */}
                 <div className="absolute inset-0 flex justify-center items-center z-10">
                   <img
                     src={showImage}
                     alt=""
-                    className="max-h-[95%] max-w-[95%] object-contain rounded-2xl shadow-2xl border-2 border-white/40 bg-black/20"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/40 bg-black/20"
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '100%',
+                    }}
                     draggable={false}
                   />
                 </div>
