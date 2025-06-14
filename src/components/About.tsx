@@ -7,17 +7,13 @@ const About = () => {
         </h2>
         {/* Josef Cerny Profile Section */}
         <div className="flex flex-col md:flex-row md:items-start md:gap-8 mb-8">
-          {/* Clean photo styling without unwanted borders or colors */}
+          {/* Clean photo styling with black background to hide white border */}
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
-            <div className="rounded-xl overflow-hidden w-44 h-52 shadow-lg bg-gray-200 border border-cerny-orange">
+            <div className="rounded-xl overflow-hidden w-44 h-52 shadow-lg bg-black">
               <img
-                src="/lovable-uploads/f72aeef1-97b3-499c-9168-35a0df4863fa.png"
+                src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
                 alt="Josef Cerny, Founder & Lead Technician"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src =
-                    'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300';
-                }}
               />
             </div>
           </div>
