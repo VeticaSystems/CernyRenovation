@@ -33,6 +33,27 @@ const Footer = () => {
             <p className="text-lg font-bold text-green-400 drop-shadow-lg tracking-wide mt-4">
               Licensed &amp; Insured &#10003;
             </p>
+            {/* Social Icons directly under Connect & Verify */}
+            <div className="flex items-center justify-center gap-8 mt-6">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook size={32} strokeWidth={2.4} />
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin size={32} strokeWidth={2.4} />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -40,28 +61,6 @@ const Footer = () => {
           <p className="text-base text-white tracking-wide font-semibold">
             © 2025 Cerny Remodeling LLC. All rights reserved.
           </p>
-        </div>
-
-        {/* Centered Social Icons */}
-        <div className="mt-8 flex items-center justify-center gap-8">
-          <a
-            href="#"
-            aria-label="Facebook"
-            className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook size={32} strokeWidth={2.4} />
-          </a>
-          <a
-            href="#"
-            aria-label="LinkedIn"
-            className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin size={32} strokeWidth={2.4} />
-          </a>
         </div>
       </div>
     </footer>
