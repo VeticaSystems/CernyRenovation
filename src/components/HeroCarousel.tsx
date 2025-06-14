@@ -5,12 +5,12 @@ const slides = [
   {
     image: '/lovable-uploads/b27b4e29-6e0e-48ef-9c88-60280ab017a8.png',
     title: '', // No title for the window image slide.
-    subtitle: '',
+    subtitle: 'Attention to detail at every step',
   },
   {
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
     title: 'Bathrooms That Feel Like Home',
-    subtitle: 'Attention to Detail at Every Step',
+    subtitle: '',
   }
 ];
 
