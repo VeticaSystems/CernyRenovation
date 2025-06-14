@@ -213,12 +213,9 @@ const HeroCarousel = () => {
             }`}
             aria-hidden={index !== currentSlide}
             style={
-              isWindowSlide && showImage
+              isWindowSlide
                 ? {
-                    // Blurred background behind
-                    background: `
-                      url(${showImage}) center/cover no-repeat
-                    `,
+                    background: '#111827', // dark gray bg for window slide
                     position: 'absolute',
                     inset: 0,
                   }
@@ -231,35 +228,21 @@ const HeroCarousel = () => {
                   }
             }
           >
-            {/* Custom fore/back for window slide */}
             {isWindowSlide && showImage ? (
               <>
-                {/* Blurred background overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: `url(${showImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'blur(24px) brightness(0.7)',
-                    zIndex: 1
-                  }}
-                  aria-hidden="true"
-                />
-                {/* Foreground image centered, original ratio */}
+                {/* Show the full image, with object-contain to keep entire photo visible */}
                 <div className="absolute inset-0 flex justify-center items-center z-10">
                   <img
                     src={showImage}
                     alt=""
-                    className="max-h-[90%] max-w-[90%] object-contain rounded-2xl shadow-2xl border-2 border-white/40 bg-black/10"
+                    className="max-h-[95%] max-w-[95%] object-contain rounded-2xl shadow-2xl border-2 border-white/40 bg-black/20"
                     draggable={false}
                   />
                 </div>
-                {/* Overlay for color tone and darkness */}
-                <div className="absolute inset-0 bg-black/40 z-20" />
+                {/* Overlay for color/darkness for legibility */}
+                <div className="absolute inset-0 bg-black/30 z-20" />
               </>
             ) : (
-              // Default slide code (for non-window images, e.g. bathroom)
               <>
                 {/* Loading skeleton for image */}
                 {!showImage && (
