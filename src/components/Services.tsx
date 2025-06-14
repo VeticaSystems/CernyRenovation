@@ -1,40 +1,42 @@
 
+import { Link } from 'react-router-dom';
+
 const services = [
   {
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400',
     title: 'Kitchen Renovation',
     description: 'Complete kitchen transformations with custom cabinets, countertops, and modern appliances.',
-    link: '#kitchen'
+    link: '/services/kitchen'
   },
   {
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400',
     title: 'Bathroom Renovation',
     description: 'Full bathroom remodels with modern fixtures, tiling, and luxury finishes.',
-    link: '#bathroom'
+    link: '/services/bathroom'
   },
   {
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400',
     title: 'Painting Services',
     description: 'Professional interior and exterior painting with premium paints and expert techniques.',
-    link: '#painting'
+    link: '/services/painting'
   },
   {
     image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=400',
     title: 'Tile Services',
     description: 'Expert tile installation for floors, walls, backsplashes, and bathroom surfaces.',
-    link: '#tile'
+    link: '/services/tile'
   },
   {
     image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400',
     title: 'Fencing',
     description: 'Custom fencing solutions for privacy, security, and aesthetic enhancement of your property.',
-    link: '#fencing'
+    link: '/services/fencing'
   },
   {
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400',
     title: 'Decking and Patio',
     description: 'Beautiful outdoor living spaces with custom decks, patios, and entertainment areas.',
-    link: '#decking'
+    link: '/services/decking'
   }
 ];
 
@@ -55,7 +57,7 @@ const Services = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-32 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-light-purple font-montserrat">
@@ -64,12 +66,12 @@ const Services = () => {
                 <p className="text-tenorite mb-4 text-sm leading-relaxed">
                   {service.description}
                 </p>
-                <a
-                  href={service.link}
+                <Link
+                  to={service.link}
                   className="text-cerny-orange font-semibold text-sm hover:text-cerny-orange-dark transition-colors"
                 >
                   Learn More →
-                </a>
+                </Link>
               </div>
             </div>
           ))}
