@@ -10,7 +10,7 @@ const About = () => {
           {/* Photo */}
           <div className="flex-shrink-0 flex justify-center md:block mb-6 md:mb-0">
             <img
-              src="/lovable-uploads/b27b4e29-6e0e-48ef-9c88-60280ab017a8.png"
+              src="/lovable-uploads/224b9135-74c3-45e8-92e1-df55fbcc6c62.png"
               alt="Josef Cerny, Founder & Lead Technician"
               className="w-40 h-40 object-cover rounded-lg border border-gray-200 shadow-md"
             />
