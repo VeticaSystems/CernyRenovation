@@ -1,5 +1,5 @@
 
-import { Star, Shield, Award } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 const TrustIndicators = () => {
   return (
@@ -29,15 +29,7 @@ const TrustIndicators = () => {
           </div>
         </div>
       </div>
-
-      {/* Awards */}
-      <div className="text-center">
-        <div className="flex justify-center items-center mb-2">
-          <Award className="w-5 h-5 text-cerny-orange mr-2" />
-          <span className="font-semibold text-light-purple">Award-Winning Team</span>
-        </div>
-        <p className="text-sm text-tenorite">Northern Virginia's Top Remodeling Company 2023</p>
-      </div>
+      {/* Awards section has been removed as requested */}
     </div>
   );
 };
