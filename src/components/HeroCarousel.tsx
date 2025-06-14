@@ -10,7 +10,7 @@ interface Slide {
 // --- Slides array ---
 const slides: Slide[] = [
   {
-    image: '/lovable-uploads/5c3adc8d-2724-424a-909d-990f9100f555.png', // User's re-uploaded bright image
+    image: '/lovable-uploads/73b44247-0967-4f9f-882f-4b9e4a0a7b37.png', // User's new wide window image
     title: '',
     subtitle: '',
   },
