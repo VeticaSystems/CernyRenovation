@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,16 +10,16 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50">
       <div className="container max-w-6xl mx-auto px-4">
         <nav className="flex justify-between items-center py-4">
-          <div className="flex flex-col items-center">
+          <Link to="/" className="flex flex-col items-center group cursor-pointer">
             <img 
               src="/lovable-uploads/e60193fb-5df7-49a0-bdbf-0c7a1f6126b2.png" 
               alt="Cerny Remodeling Logo" 
-              className="h-12 w-auto mb-1"
+              className="h-12 w-auto mb-1 transition-transform group-hover:scale-105"
             />
-            <div className="text-xl font-bold text-light-purple font-montserrat">
+            <div className="text-xl font-bold text-light-purple font-montserrat group-hover:text-purple-800 transition-colors">
               Cerny Remodeling
             </div>
-          </div>
+          </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
@@ -76,3 +77,4 @@ const Header = () => {
 };
 
 export default Header;
+
