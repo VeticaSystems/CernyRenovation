@@ -10,7 +10,7 @@ interface Slide {
 // --- Slides array ---
 const slides: Slide[] = [
   {
-    image: '/lovable-uploads/9f594283-5d13-4082-845f-57ce572ce8b6.png', // User's bright uploaded image
+    image: '/lovable-uploads/5c3adc8d-2724-424a-909d-990f9100f555.png', // User's re-uploaded bright image
     title: '',
     subtitle: '',
   },
@@ -52,8 +52,6 @@ const HeroCarousel = () => {
   // Preload all images, set loaded/error state per image
   useEffect(() => {
     slides.forEach((slide, index) => {
-      // Debug: log which images are being preloaded
-      console.log("Preloading image:", slide.image, "at index:", index);
       preloadImage(slide.image).then((result) => {
         setLoadedImages((prev) => {
           const updated = [...prev];
@@ -65,8 +63,6 @@ const HeroCarousel = () => {
           updated[index] = !result;
           return updated;
         });
-        // Debug: log preload results
-        console.log(`Image at index ${index}:`, slide.image, "Loaded:", result);
       });
     });
   }, []);
