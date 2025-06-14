@@ -211,10 +211,10 @@ const HeroCarousel = () => {
             aria-hidden={index !== currentSlide}
             style={{
               backgroundImage: showImage ? `url(${showImage})` : undefined,
-              backgroundSize: 'contain', // show more of image, less cropping
+              backgroundSize: 'cover', // fill container, minimal cropping, keeps ratio
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
-              backgroundColor: '#18181b', // fallback behind transparent images / contain mode gaps
+              backgroundColor: '#18181b', // fallback behind transparent images
             }}
           >
             {/* Loading skeleton for image */}
