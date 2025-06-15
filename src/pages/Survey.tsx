@@ -87,22 +87,23 @@ const Survey = () => {
   };
 
   return (
-    <section className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#191A25] to-[#27283B] px-2 py-12">
+    <section className="flex min-h-screen items-start justify-center bg-gradient-to-br from-[#191A25] to-[#27283B] px-2 py-12 pt-20">
       <Card className="max-w-xl w-full shadow-2xl bg-[#23243A] border border-[#262741] text-white animate-fade-in">
-        <CardHeader>
-          <CardTitle className="text-2xl font-montserrat text-cerny-orange mb-1">
-            Cerny Remodeling Detailed Feedback
-          </CardTitle>
-          <p className="text-sm text-[#b7b5c6] mt-1 font-medium">
-            Thank you for taking a moment to share your experience with us!
-          </p>
-        </CardHeader>
+        {!submitted && (
+          <CardHeader>
+            <CardTitle className="text-2xl font-montserrat text-cerny-orange mb-1">
+              Cerny Remodeling Detailed Feedback
+            </CardTitle>
+            <p className="text-sm text-[#b7b5c6] mt-1 font-medium">
+              Thank you for taking a moment to share your experience with us!
+            </p>
+          </CardHeader>
+        )}
         <CardContent>
           {submitted ? (
-            <div className="py-8 text-center">
-              <div className="text-xl font-extrabold text-cerny-orange mb-4">Thank you for your feedback!</div>
-              <div className="text-[#ccccda] text-base">
-                We truly value your insights and will use them to improve our service.
+            <div className="flex flex-col items-center justify-center min-h-[270px] text-center py-10">
+              <div className="text-2xl font-extrabold text-cerny-orange mb-2">
+                Thank you for your feedback!
               </div>
             </div>
           ) : (
