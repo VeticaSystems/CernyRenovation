@@ -1,7 +1,7 @@
 
 import React from "react";
 
-// Deck & Patio Gallery Data
+// Only use images that are actually present in /public/lovable-uploads/
 const gallery = [
   {
     src: "/lovable-uploads/3d8297ed-de0f-4769-9c80-ec6b84d11468.png",
@@ -43,28 +43,11 @@ const gallery = [
     src: "/lovable-uploads/f9ea4e7b-db47-4ad0-bdb9-1b09cf1a7d4d.png",
     label: "Patio with Seating Area",
   },
-  // New images below
-  {
-    src: "/lovable-uploads/301dd9dd-c7b7-4237-bcb5-df76b0e9a1e4.png",
-    label: "Covered Patio with Columns",
-  },
-  {
-    src: "/lovable-uploads/27179ea9-83ae-4af1-8c9c-3f3f9aae9bd8.png",
-    label: "Composite Deck with Privacy Screen",
-  },
-  {
-    src: "/lovable-uploads/e4d370f4-d9df-45a5-a7c5-cc0229a822a1.png",
-    label: "Multi-Level Deck & Stone Patio",
-  },
-  {
-    src: "/lovable-uploads/6cd6789a-32c6-4aef-9164-be414b5d639f.png",
-    label: "White Railing & Finished Steps",
-  },
-  {
-    src: "/lovable-uploads/20136eda-cf7b-4fe9-8cb8-67d27cd18ad9.png",
-    label: "Deck Railing Detail Close-up",
-  },
 ];
+
+// Placeholder image for any that fail to load
+const placeholder =
+  "https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=facearea&w=720&h=400&q=80";
 
 const Decking = () => (
   <main className="container mx-auto py-12 px-4">
@@ -81,6 +64,10 @@ const Decking = () => (
               alt={item.label}
               className="w-full h-56 object-cover object-center"
               loading={idx > 2 ? "lazy" : "eager"}
+              onError={e => {
+                const target = e.currentTarget as HTMLImageElement;
+                target.src = placeholder;
+              }}
             />
             <div className="p-3">
               <div className="text-base font-semibold text-cerny-orange mb-1">{item.label}</div>
