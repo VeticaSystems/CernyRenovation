@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // --- 1. Add TypeScript interfaces ---
@@ -273,20 +274,22 @@ const HeroCarousel = () => {
                     </div>
                   </div>
                 )}
-                {/* Paused badge */}
-                {index === currentSlide && paused && (
+                {/* Paused badge for non-window slides only */}
+                {index === currentSlide && paused && !isWindowSlide && (
                   <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow">
                     Paused
                   </div>
                 )}
               </>
             )}
-            {/* Pause badge for window image */}
+            {/* Remove paused badge for window slide */}
+            {/* The following is removed:
             {isWindowSlide && index === currentSlide && paused && (
               <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow z-50">
                 Paused
               </div>
             )}
+            */}
           </div>
         );
       })}
@@ -334,3 +337,4 @@ const HeroCarousel = () => {
 };
 
 export default HeroCarousel;
+
