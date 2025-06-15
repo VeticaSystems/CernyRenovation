@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           {/* Connect & Verify */}
-          <div className="text-center md:text-left flex flex-col items-center md:items-start">
+          <div className="text-center flex flex-col items-center">
             <h4 className="text-2xl font-extrabold mb-3 text-white font-montserrat drop-shadow">
               Connect &amp; Verify
             </h4>
@@ -74,3 +74,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
