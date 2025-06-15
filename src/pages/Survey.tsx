@@ -108,34 +108,39 @@ const Survey = () => {
           ) : (
             <form className="space-y-6 mt-2" onSubmit={handleSubmit(onSubmit)} noValidate>
               {/* Project Status */}
-              <div>
-                <label className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">Project Status <span className="text-red-500">*</span></label>
+              <fieldset className="border-0 p-0 m-0">
+                <legend className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
+                  Project Status <span className="text-red-500">*</span>
+                </legend>
                 <div className="flex flex-wrap gap-4">
                   <Controller
                     control={control}
                     name="completed"
                     render={({ field }) => (
                       <>
-                        {completionOptions.map((label) => (
-                          <label
-                            key={label}
-                            className="flex items-center gap-2 text-[#e3e2ef] hover:text-cerny-orange transition-colors"
-                          >
-                            <input
-                              type="checkbox"
-                              checked={field.value.includes(label)}
-                              onChange={(e) => {
-                                field.onChange(
-                                  e.target.checked
-                                    ? [...field.value, label]
-                                    : field.value.filter((v) => v !== label)
-                                );
-                              }}
-                              className="accent-cerny-orange w-4 h-4 rounded border-[#35365a] bg-[#10101a] transition duration-100"
-                            />
-                            <span>{label}</span>
-                          </label>
-                        ))}
+                        {completionOptions.map((label, idx) => {
+                          const checkboxId = `completed-${idx}`;
+                          return (
+                            <div key={label} className="flex items-center gap-2">
+                              <input
+                                id={checkboxId}
+                                type="checkbox"
+                                checked={field.value.includes(label)}
+                                onChange={(e) =>
+                                  field.onChange(
+                                    e.target.checked
+                                      ? [...field.value, label]
+                                      : field.value.filter((v) => v !== label)
+                                  )
+                                }
+                                className="accent-cerny-orange w-4 h-4 rounded border-[#35365a] bg-[#10101a] transition duration-100"
+                              />
+                              <label htmlFor={checkboxId} className="text-[#e3e2ef] hover:text-cerny-orange transition-colors cursor-pointer">
+                                {label}
+                              </label>
+                            </div>
+                          );
+                        })}
                       </>
                     )}
                   />
@@ -143,39 +148,42 @@ const Survey = () => {
                 {errors.completed && (
                   <p className="text-sm text-red-400 mt-1">{errors.completed.message}</p>
                 )}
-              </div>
+              </fieldset>
 
               {/* Process for Starting Project */}
-              <div>
-                <label className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
+              <fieldset className="border-0 p-0 m-0">
+                <legend className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
                   How would you rate our process for starting your project? <span className="text-red-500">*</span>
-                </label>
+                </legend>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Controller
                     control={control}
                     name="process"
                     render={({ field }) => (
                       <>
-                        {processOptions.map((option) => (
-                          <label
-                            key={option}
-                            className={`flex items-center gap-2 px-3 py-2 rounded-md
-                              ${field.value === option
-                              ? "bg-[#ff6500]/90 text-white font-bold"
-                              : "hover:bg-[#191A25] text-[#f6f4ff]"} transition-colors cursor-pointer`}
-                          >
-                            <input
-                              type="radio"
-                              name="process"
-                              value={option}
-                              checked={field.value === option}
-                              onChange={() => field.onChange(option)}
-                              className="accent-cerny-orange w-4 h-4"
-                              required
-                            />
-                            <span>{option}</span>
-                          </label>
-                        ))}
+                        {processOptions.map((option, idx) => {
+                          const radioId = `process-${idx}`;
+                          return (
+                            <div key={option} className="flex items-center gap-2">
+                              <input
+                                id={radioId}
+                                type="radio"
+                                name="process"
+                                value={option}
+                                checked={field.value === option}
+                                onChange={() => field.onChange(option)}
+                                className="accent-cerny-orange w-4 h-4"
+                                required
+                              />
+                              <label htmlFor={radioId} className={`px-3 py-2 rounded-md
+                                ${field.value === option
+                                  ? "bg-[#ff6500]/90 text-white font-bold"
+                                  : "hover:bg-[#191A25] text-[#f6f4ff]"} transition-colors cursor-pointer`}>
+                                {option}
+                              </label>
+                            </div>
+                          );
+                        })}
                       </>
                     )}
                   />
@@ -183,54 +191,58 @@ const Survey = () => {
                 {errors.process && (
                   <p className="text-sm text-red-400 mt-1">{errors.process.message}</p>
                 )}
-              </div>
+              </fieldset>
 
               {/* Employee Interaction Rating */}
-              <div>
-                <label className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
+              <fieldset className="border-0 p-0 m-0">
+                <legend className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
                   Interactions with Our Employees <span className="text-red-500">*</span>
-                </label>
+                </legend>
                 <Controller
                   control={control}
                   name="interaction"
                   render={({ field }) => (
                     <div className="flex gap-3">
-                      {interactionOptions.map((n) => (
-                        <label key={n} className="flex flex-col items-center cursor-pointer w-12 group select-none">
-                          <input
-                            type="radio"
-                            name="interaction"
-                            value={n}
-                            checked={field.value === n.toString()}
-                            onChange={() => field.onChange(n.toString())}
-                            className="sr-only"
-                            required
-                          />
-                          <span
-                            className={`w-9 h-9 rounded-full flex items-center justify-center font-bold border-2
-                              ${field.value === n.toString()
-                                ? "bg-cerny-orange border-cerny-orange text-white shadow-lg"
-                                : "border-cerny-orange text-cerny-orange group-hover:bg-cerny-orange group-hover:text-white transition-colors"
-                              }`}
-                          >
-                            {n}
-                          </span>
-                          <span className={`text-xs mt-1 ${field.value === n.toString() ? "text-cerny-orange" : "text-[#c4c3d6]"}`}>
-                            {n === 5 ? "Excellent" : n === 1 ? "Poor" : "\u00A0"}
-                          </span>
-                        </label>
-                      ))}
+                      {interactionOptions.map((n, idx) => {
+                        const rateId = `interaction-${n}`;
+                        return (
+                          <label key={n} htmlFor={rateId} className="flex flex-col items-center cursor-pointer w-12 group select-none">
+                            <input
+                              id={rateId}
+                              type="radio"
+                              name="interaction"
+                              value={n}
+                              checked={field.value === n.toString()}
+                              onChange={() => field.onChange(n.toString())}
+                              className="sr-only"
+                              required
+                            />
+                            <span
+                              className={`w-9 h-9 rounded-full flex items-center justify-center font-bold border-2
+                                ${field.value === n.toString()
+                                  ? "bg-cerny-orange border-cerny-orange text-white shadow-lg"
+                                  : "border-cerny-orange text-cerny-orange group-hover:bg-cerny-orange group-hover:text-white transition-colors"
+                                }`}
+                            >
+                              {n}
+                            </span>
+                            <span className={`text-xs mt-1 ${field.value === n.toString() ? "text-cerny-orange" : "text-[#c4c3d6]"}`}>
+                              {n === 5 ? "Excellent" : n === 1 ? "Poor" : "\u00A0"}
+                            </span>
+                          </label>
+                        );
+                      })}
                     </div>
                   )}
                 />
                 {errors.interaction && (
                   <p className="text-sm text-red-400 mt-1">{errors.interaction.message}</p>
                 )}
-              </div>
+              </fieldset>
 
               {/* Overall Impression */}
               <div>
-                <label className="block text-base font-bold mb-2 text-cerny-orange drop-shadow">
+                <label className="block text-base font-bold mb-2 text-cerny-orange drop-shadow" htmlFor="impression">
                   Please share your overall impression with us <span className="text-red-500">*</span>
                 </label>
                 <Controller
@@ -239,6 +251,7 @@ const Survey = () => {
                   render={({ field }) => (
                     <textarea
                       {...field}
+                      id="impression"
                       rows={4}
                       className="w-full p-3 border border-[#35365a] rounded-md shadow-inner bg-[#181831] text-white focus:outline-none focus:ring-2 focus:ring-cerny-orange"
                       placeholder="Your comments, suggestions, or thoughts..."
