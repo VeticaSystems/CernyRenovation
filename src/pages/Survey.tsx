@@ -128,7 +128,9 @@ const Survey = () => {
                                 field.onChange(
                                   e.target.checked
                                     ? [...field.value, label]
-                                    : field.value.filter((v) => v !== label)
+                                    : field.value.filter(
+                                        (v: "Project completed" | "Project in progress" | "Estimate only") => v !== label
+                                      )
                                 );
                               }}
                               className="accent-cerny-orange w-4 h-4 rounded border-[#35365a] bg-[#10101a] transition duration-100"
