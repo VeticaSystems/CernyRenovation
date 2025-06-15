@@ -46,7 +46,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
           <div className="text-center">
             <div className="bg-cerny-orange text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold">13+</span>
+              <span className="text-2xl font-bold">30+</span>
             </div>
             <h3 className="font-semibold text-light-purple mb-2">Years Experience</h3>
             <p className="text-tenorite text-xs">Serving Northern Virginia since 2011</p>
