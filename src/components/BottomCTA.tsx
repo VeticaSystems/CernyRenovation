@@ -12,11 +12,11 @@ const BottomCTA = () => {
           Call us now for immediate assistance and to schedule your free consultation
         </p>
         <a 
-          href="tel:5551234567"
+          href="tel:6512784835"
           className="inline-flex items-center bg-cerny-orange hover:bg-cerny-orange-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
         >
           <Phone className="w-5 h-5 mr-2" />
-          Call (555) 123-4567
+          Call (651) 278-4835
         </a>
       </div>
     </div>

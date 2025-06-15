@@ -1,4 +1,3 @@
-
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -37,7 +36,7 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
             value={formData.phone}
             onChange={handleChange}
             required
-            placeholder="(555) 123-4567"
+            placeholder="(651) 278-4835"
           />
         </div>
       </div>

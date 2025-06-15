@@ -1,4 +1,3 @@
-
 import { Facebook, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -15,7 +14,7 @@ const Footer = () => {
             <p className="text-lg mb-1 font-semibold text-white">
               Phone:{" "}
               <span className="whitespace-nowrap font-bold text-cerny-orange">
-                (555) 123-4567
+                (651) 278-4835
               </span>
             </p>
             <p className="text-lg break-all font-semibold text-white">
