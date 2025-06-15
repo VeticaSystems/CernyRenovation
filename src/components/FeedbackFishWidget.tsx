@@ -2,9 +2,12 @@
 import { useEffect } from "react";
 
 /**
- * Feedback Fish Widget integration. 
+ * Feedback Fish Widget integration for Cerny Remodeling
  * 
- * Note: Edit the data-question attribute to your liking, and set your Feedback Fish project code.
+ * Usage: 
+ * - The Feedback Fish script reads data attributes from a normal button element.
+ * - Adjust the 'feedbackFishCode' to use your project's code.
+ * - Styling and placement is controlled via Tailwind/className & inline style.
  */
 const FeedbackFishWidget = () => {
   useEffect(() => {
@@ -19,14 +22,20 @@ const FeedbackFishWidget = () => {
   }, []);
 
   // Replace with your Feedback Fish code!
-  // You can easily find your project code on their website.
   const feedbackFishCode = "YOUR_FEEDBACKFISH_CODE";
 
   return (
-    <feedback-fish
-      // Widget floats bottom-right, custom CTA label.
-      project={feedbackFishCode}
-      class="fixed right-4 bottom-6 z-[110] shadow-lg animate-fade-in font-montserrat transition-all"
+    <button
+      type="button"
+      data-feedback-fish
+      data-project={feedbackFishCode}
+      data-question="How was your experience with Cerny Remodeling?"
+      data-cta="Leave Feedback"
+      data-on-positive="Thank you! Want to leave more detailed feedback? Visit our survey page."
+      data-on-positive-url="/survey"
+      data-on-negative="Sorry to hear that. Please tell us more below, or visit our survey."
+      data-on-negative-url="/survey"
+      className="fixed right-4 bottom-6 z-[110] shadow-lg animate-fade-in font-montserrat transition-all select-none"
       style={{
         color: "#fff",
         background: "#b19cd9",
@@ -34,19 +43,14 @@ const FeedbackFishWidget = () => {
         borderRadius: "30px",
         fontSize: "1rem",
         boxShadow: "0 2px 16px 0 rgba(0,0,0,0.13)",
-        padding: "0.6em 1.4em"
+        padding: "0.6em 1.4em",
       }}
-      data-question="How was your experience with Cerny Remodeling?"
-      // Optional: Encourage to leave more detailed feedback
-      data-cta="Leave Feedback"
-      data-on-positive="Thank you! Want to leave more detailed feedback? Visit our survey page."
-      data-on-positive-url="/survey"
-      data-on-negative="Sorry to hear that. Please tell us more below, or visit our survey."
-      data-on-negative-url="/survey"
+      aria-label="Leave quick feedback"
     >
-      {/* The widget will be rendered by the FF script */}
-    </feedback-fish>
+      Leave Feedback
+    </button>
   );
 };
 
 export default FeedbackFishWidget;
+
