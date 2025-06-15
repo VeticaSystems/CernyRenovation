@@ -43,6 +43,27 @@ const gallery = [
     src: "/lovable-uploads/f9ea4e7b-db47-4ad0-bdb9-1b09cf1a7d4d.png",
     label: "Patio with Seating Area",
   },
+  // New images below
+  {
+    src: "/lovable-uploads/301dd9dd-c7b7-4237-bcb5-df76b0e9a1e4.png",
+    label: "Covered Patio with Columns",
+  },
+  {
+    src: "/lovable-uploads/27179ea9-83ae-4af1-8c9c-3f3f9aae9bd8.png",
+    label: "Composite Deck with Privacy Screen",
+  },
+  {
+    src: "/lovable-uploads/e4d370f4-d9df-45a5-a7c5-cc0229a822a1.png",
+    label: "Multi-Level Deck & Stone Patio",
+  },
+  {
+    src: "/lovable-uploads/6cd6789a-32c6-4aef-9164-be414b5d639f.png",
+    label: "White Railing & Finished Steps",
+  },
+  {
+    src: "/lovable-uploads/20136eda-cf7b-4fe9-8cb8-67d27cd18ad9.png",
+    label: "Deck Railing Detail Close-up",
+  },
 ];
 
 const Decking = () => (
