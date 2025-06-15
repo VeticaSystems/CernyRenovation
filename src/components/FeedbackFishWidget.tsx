@@ -1,4 +1,6 @@
 
+"use client";
+
 import { useEffect } from "react";
 
 /**
@@ -27,7 +29,7 @@ const FeedbackFishWidget = () => {
   return (
     <button
       type="button"
-      data-feedback-fish
+      data-feedback-fish=""
       data-project={feedbackFishCode}
       data-question="How was your experience with Cerny Remodeling?"
       data-cta="Leave Feedback"
