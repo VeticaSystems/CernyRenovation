@@ -10,7 +10,7 @@ const completionOptions = [
   "Project completed",
   "Project in progress",
   "Estimate only",
-];
+] as const; // Add "as const" to infer each to their literal type
 const processOptions = [
   "Excellent",
   "Good",
@@ -128,9 +128,7 @@ const Survey = () => {
                                 field.onChange(
                                   e.target.checked
                                     ? [...field.value, label]
-                                    : field.value.filter(
-                                        (v: "Project completed" | "Project in progress" | "Estimate only") => v !== label
-                                      )
+                                    : field.value.filter((v) => v !== label)
                                 );
                               }}
                               className="accent-cerny-orange w-4 h-4 rounded border-[#35365a] bg-[#10101a] transition duration-100"
