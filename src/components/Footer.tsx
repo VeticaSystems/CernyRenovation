@@ -1,5 +1,6 @@
 
 import { Facebook, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -61,12 +62,12 @@ const Footer = () => {
           <p className="text-base text-white tracking-wide font-semibold">
             © 2025 Cerny Remodeling LLC. All rights reserved.
           </p>
-          <a
-            href="/survey"
+          <Link
+            to="/survey"
             className="inline-block mt-2 text-cerny-orange font-bold underline underline-offset-2 hover:text-cerny-orange-dark transition-colors"
           >
             Leave Detailed Feedback
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
@@ -74,4 +75,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
