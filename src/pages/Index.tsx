@@ -6,7 +6,6 @@ import About from '../components/About';
 import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
-import FeedbackFishWidget from '../components/FeedbackFishWidget';
 
 const Index = () => {
   return (
@@ -22,9 +21,9 @@ const Index = () => {
       </main>
       
       <Footer />
-      <FeedbackFishWidget />
     </div>
   );
 };
 
 export default Index;
+
