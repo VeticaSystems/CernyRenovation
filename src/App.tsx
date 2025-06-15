@@ -13,6 +13,7 @@ import Tile from "./pages/services/Tile";
 import Fencing from "./pages/services/Fencing";
 import Decking from "./pages/services/Decking";
 import Survey from "./pages/Survey";
+import FeedbackWidget from "./components/FeedbackWidget";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <FeedbackWidget />
       <BrowserRouter>
         <Header />
         <Routes>
