@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -129,7 +128,7 @@ const Survey = () => {
                                 field.onChange(
                                   e.target.checked
                                     ? [...field.value, label]
-                                    : field.value.filter((v: string) => v !== label)
+                                    : field.value.filter((v) => v !== label)
                                 );
                               }}
                               className="accent-cerny-orange w-4 h-4 rounded border-[#35365a] bg-[#10101a] transition duration-100"
@@ -307,4 +306,3 @@ const Survey = () => {
 };
 
 export default Survey;
-
