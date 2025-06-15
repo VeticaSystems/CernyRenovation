@@ -57,10 +57,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 w-full text-center">
+        <div className="mt-12 w-full text-center space-y-2">
           <p className="text-base text-white tracking-wide font-semibold">
             © 2025 Cerny Remodeling LLC. All rights reserved.
           </p>
+          <a
+            href="/survey"
+            className="inline-block mt-2 text-cerny-orange font-bold underline underline-offset-2 hover:text-cerny-orange-dark transition-colors"
+          >
+            Leave Detailed Feedback
+          </a>
         </div>
       </div>
     </footer>

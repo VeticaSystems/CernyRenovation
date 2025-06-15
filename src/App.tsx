@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +12,7 @@ import Painting from "./pages/services/Painting";
 import Tile from "./pages/services/Tile";
 import Fencing from "./pages/services/Fencing";
 import Decking from "./pages/services/Decking";
+import Survey from "./pages/Survey";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +32,8 @@ const App = () => (
           <Route path="/services/tile" element={<Tile />} />
           <Route path="/services/fencing" element={<Fencing />} />
           <Route path="/services/decking" element={<Decking />} />
+          {/* Feedback Survey */}
+          <Route path="/survey" element={<Survey />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -41,4 +43,3 @@ const App = () => (
 );
 
 export default App;
-

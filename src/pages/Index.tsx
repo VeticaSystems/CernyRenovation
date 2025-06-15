@@ -3,10 +3,10 @@ import Header from '../components/Header';
 import HeroCarousel from '../components/HeroCarousel';
 import Services from '../components/Services';
 import About from '../components/About';
-// Removed Portfolio import
 import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
+import FeedbackFishWidget from '../components/FeedbackFishWidget';
 
 const Index = () => {
   return (
@@ -17,15 +17,14 @@ const Index = () => {
         <HeroCarousel />
         <Services />
         <About />
-        {/* Portfolio section removed */}
         <Testimonials />
         <ContactForm />
       </main>
       
       <Footer />
+      <FeedbackFishWidget />
     </div>
   );
 };
 
 export default Index;
-
