@@ -38,6 +38,8 @@ const CarouselSlide = ({
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
               backgroundColor: '#18181b',
+              width: '100%',
+              height: '100%',
             }
       }
     >
@@ -47,10 +49,11 @@ const CarouselSlide = ({
             <img
               src={showImage}
               alt=""
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
               }}
               draggable={false}
             />

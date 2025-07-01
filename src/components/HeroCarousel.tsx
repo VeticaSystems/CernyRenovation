@@ -78,7 +78,12 @@ const HeroCarousel = () => {
   return (
     <section
       className="relative w-full overflow-hidden outline-none"
-      style={{ height: 'calc(100vh - 4rem)' }}
+      style={{ 
+        height: 'calc(100vh - 4rem)',
+        width: '100vw',
+        marginLeft: 'calc(-50vw + 50%)',
+        marginRight: 'calc(-50vw + 50%)',
+      }}
       tabIndex={0}
       ref={containerRef as any}
       aria-label="Showcase image carousel"

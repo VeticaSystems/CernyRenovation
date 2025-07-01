@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Index from "./pages/Index";
+import AboutPage from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Kitchen from "./pages/services/Kitchen";
 import Bathroom from "./pages/services/Bathroom";
@@ -31,6 +32,7 @@ const App = () => (
         <FeedbackWidget />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
           {/* Service Detail Pages */}
           <Route path="/services/kitchen" element={<Kitchen />} />
           <Route path="/services/bathroom" element={<Bathroom />} />

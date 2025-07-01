@@ -42,9 +42,9 @@ const Header = () => {
               Home
             </Link>
             
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
               About Us
-            </a>
+            </Link>
             
             {/* Services Dropdown */}
             <DropdownMenu>
@@ -92,9 +92,9 @@ const Header = () => {
                 Home
               </Link>
               
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+              <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
                 About Us
-              </a>
+              </Link>
               
               {/* Mobile Services Menu */}
               <div className="flex flex-col">
