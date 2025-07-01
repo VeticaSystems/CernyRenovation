@@ -23,32 +23,32 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
       <div className="container max-w-7xl mx-auto px-6">
-        <nav className="flex justify-between items-center h-16">
+        <nav className="flex justify-between items-center h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group cursor-pointer">
             <img 
               src="/lovable-uploads/e60193fb-5df7-49a0-bdbf-0c7a1f6126b2.png" 
               alt="Cerny Remodeling Logo" 
-              className="h-8 w-auto transition-transform group-hover:scale-105"
+              className="h-7 w-auto"
             />
-            <span className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+            <span className="text-lg font-medium text-gray-800">
               Cerny Remodeling
             </span>
           </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
               Home
             </Link>
             
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-              About
+            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+              About Us
             </a>
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1 font-medium">
+              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
                 Services
                 <ChevronDown size={16} />
               </DropdownMenuTrigger>
@@ -57,7 +57,7 @@ const Header = () => {
                   <DropdownMenuItem key={service.name} asChild>
                     <Link 
                       to={service.href} 
-                      className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors px-4 py-2 cursor-pointer font-medium block w-full"
+                      className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors px-4 py-2 cursor-pointer block w-full"
                     >
                       {service.name}
                     </Link>
@@ -66,11 +66,11 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors">
               Featured Projects
             </a>
             
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
               Contact Us
             </a>
           </div>
@@ -88,23 +88,23 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-gray-100">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Home
               </Link>
               
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                About
+              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+                About Us
               </a>
               
               {/* Mobile Services Menu */}
               <div className="flex flex-col">
-                <span className="text-gray-700 font-medium mb-2">Services</span>
+                <span className="text-gray-700 mb-2">Services</span>
                 <div className="flex flex-col space-y-2 ml-4">
                   {serviceLinks.map((service) => (
                     <Link 
                       key={service.name}
                       to={service.href} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                      className="text-gray-600 hover:text-blue-600 transition-colors"
                     >
                       {service.name}
                     </Link>
@@ -112,11 +112,11 @@ const Header = () => {
                 </div>
               </div>
               
-              <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Featured Projects
               </a>
               
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
                 Contact Us
               </a>
             </div>
