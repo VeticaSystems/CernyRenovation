@@ -1,14 +1,12 @@
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useRef, useEffect } from 'react';
+import { Slide } from './carousel/types';
+import { FALLBACK_IMAGE } from './carousel/imageUtils';
+import { useCarouselLogic } from './carousel/useCarouselLogic';
+import CarouselSlide from './carousel/CarouselSlide';
+import CarouselIndicators from './carousel/CarouselIndicators';
+import CarouselProgressBar from './carousel/CarouselProgressBar';
 
-// --- 1. Add TypeScript interfaces ---
-interface Slide {
-  image: string;
-  title: string;
-  subtitle: string;
-}
-
-// --- Slides array ---
 const slides: Slide[] = [
   {
     image: '/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png',
@@ -22,91 +20,24 @@ const slides: Slide[] = [
   }
 ];
 
-// --- Image preload, returns a Promise ---
-const preloadImage = (url: string) =>
-  new Promise<boolean>((resolve) => {
-    const img = new window.Image();
-    img.onload = () => resolve(true);
-    img.onerror = () => resolve(false);
-    img.src = url;
-  });
-
-const FALLBACK_IMAGE = '/fallback-image.jpg';
-
-const PROGRESS_DURATION = 5000; // 5 seconds
-
 const HeroCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const [paused, setPaused] = useState<boolean>(false);
-  const [loadedImages, setLoadedImages] = useState<boolean[]>(
-    slides.map(() => false)
-  );
-  const [imageErrors, setImageErrors] = useState<boolean[]>(
-    slides.map(() => false)
-  );
-  const timerRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLElement | null>(null);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [progress, setProgress] = useState<number>(0);
+  const {
+    currentSlide,
+    setCurrentSlide,
+    paused,
+    setPaused,
+    loadedImages,
+    imageErrors,
+    touchStartX,
+    setTouchStartX,
+    progress,
+  } = useCarouselLogic(slides);
 
-  // --- Preload all images, set loaded/error state per image ---
-  useEffect(() => {
-    slides.forEach((slide, index) => {
-      preloadImage(slide.image).then((result) => {
-        setLoadedImages((prev) => {
-          const updated = [...prev];
-          updated[index] = result;
-          return updated;
-        });
-        setImageErrors((prev) => {
-          const updated = [...prev];
-          updated[index] = !result;
-          return updated;
-        });
-      });
-    });
-  }, []);
-
-  // --- Start/stop carousel interval ---
-  const startCarousel = useCallback(() => {
-    if (timerRef.current) window.clearInterval(timerRef.current);
-    timerRef.current = window.setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-  }, []);
-
-  const stopCarousel = useCallback(() => {
-    if (timerRef.current) window.clearInterval(timerRef.current);
-  }, []);
-
-  useEffect(() => {
-    if (!paused) {
-      startCarousel();
-    } else {
-      stopCarousel();
-    }
-    return () => stopCarousel();
-  }, [paused, startCarousel, stopCarousel]);
-
-  // Pause/play on page hide/show (document hidden)
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        stopCarousel();
-      } else if (!paused) {
-        startCarousel();
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () =>
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, [paused, startCarousel, stopCarousel]);
-
-  // Pause on hover for desktop users
+  // Event handlers
   const handleMouseEnter = () => setPaused(true);
   const handleMouseLeave = () => setPaused(false);
 
-  // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowRight') {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -120,10 +51,10 @@ const HeroCarousel = () => {
     }
   };
 
-  // Touch/swipe support for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
   };
+
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX === null) return;
     const dx = e.changedTouches[0].clientX - touchStartX;
@@ -143,34 +74,6 @@ const HeroCarousel = () => {
       containerRef.current.setAttribute('tabIndex', '0');
     }
   }, []);
-
-  // Animate progress bar for current slide
-  useEffect(() => {
-    if (paused) {
-      setProgress(0);
-      return;
-    }
-    setProgress(0);
-    let frame: number;
-    let start: number | null = null;
-
-    const animate = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const newProgress = Math.min((elapsed / PROGRESS_DURATION) * 100, 100);
-      setProgress(newProgress);
-      if (elapsed < PROGRESS_DURATION) {
-        frame = requestAnimationFrame(animate);
-      }
-    };
-
-    frame = requestAnimationFrame(animate);
-
-    return () => {
-      setProgress(0);
-      cancelAnimationFrame(frame);
-    };
-  }, [currentSlide, paused]);
 
   return (
     <section
@@ -196,116 +99,25 @@ const HeroCarousel = () => {
         const isWindowSlide = index === 0;
 
         return (
-          <div
+          <CarouselSlide
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 will-change-opacity ${
-              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
-            aria-hidden={index !== currentSlide}
-            style={
-              isWindowSlide
-                ? {
-                    background: '#111827',
-                    position: 'absolute',
-                    inset: 0,
-                  }
-                : {
-                    backgroundImage: showImage ? `url(${showImage})` : undefined,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundColor: '#18181b',
-                  }
-            }
-          >
-            {isWindowSlide && showImage ? (
-              <>
-                <div className="absolute inset-0 flex justify-center items-center z-10">
-                  <img
-                    src={showImage}
-                    alt=""
-                    className="w-full h-full object-contain"
-                    style={{
-                      maxWidth: '100%',
-                      maxHeight: '100%',
-                    }}
-                    draggable={false}
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/20 z-20" />
-              </>
-            ) : (
-              <>
-                {!showImage && (
-                  <div className="w-full h-full flex justify-center items-center bg-cerny-light-gray">
-                    <div className="rounded-full w-20 h-20 animate-pulse bg-muted" />
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/40" />
-                {index !== 0 && (slide.title || slide.subtitle) && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
-                      {slide.title && (
-                        <h1 className="text-[clamp(2rem,5vw,3.75rem)] font-bold mb-4 font-montserrat">
-                          {slide.title}
-                        </h1>
-                      )}
-                      {slide.subtitle && (
-                        <p className="text-[clamp(1rem,2vw,1.5rem)] mb-8 font-montserrat text-tenorite">
-                          {slide.subtitle}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                )}
-                {index === currentSlide && paused && !isWindowSlide && (
-                  <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow">
-                    Paused
-                  </div>
-                )}
-              </>
-            )}
-          </div>
+            slide={slide}
+            index={index}
+            currentSlide={currentSlide}
+            showImage={showImage}
+            isWindowSlide={isWindowSlide}
+            paused={paused}
+          />
         );
       })}
 
-      {/* Slide indicators */}
-      <div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2"
-        role="tablist"
-        aria-label="Slide navigation"
-      >
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`
-              w-3 h-3 rounded-full transition-colors outline-none ring-cerny-orange focus:ring-2 
-              ${index === currentSlide ? 'bg-white' : 'bg-white/50'}
-            `}
-            onClick={() => setCurrentSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            role="tab"
-            aria-selected={index === currentSlide}
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                setCurrentSlide(index);
-                e.preventDefault();
-              }
-            }}
-          />
-        ))}
-      </div>
-      {/* Progress bar */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-white/30 rounded overflow-hidden z-50">
-        <div
-          className="bg-light-purple h-1 transition-all duration-100"
-          style={{
-            width: `${paused ? 0 : progress}%`,
-            transition: paused ? 'none' : 'width 80ms linear'
-          }}
-        />
-      </div>
+      <CarouselIndicators
+        slidesLength={slides.length}
+        currentSlide={currentSlide}
+        onSlideChange={setCurrentSlide}
+      />
+
+      <CarouselProgressBar progress={progress} paused={paused} />
     </section>
   );
 };
