@@ -21,38 +21,43 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white backdrop-blur-sm shadow-lg z-50 border-b border-gray-100">
-      <div className="container max-w-6xl mx-auto px-6">
-        <nav className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center gap-3 group cursor-pointer">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
+      <div className="container max-w-7xl mx-auto px-6">
+        <nav className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group cursor-pointer">
             <img 
               src="/lovable-uploads/e60193fb-5df7-49a0-bdbf-0c7a1f6126b2.png" 
               alt="Cerny Remodeling Logo" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
+              className="h-8 w-auto transition-transform group-hover:scale-105"
             />
-            <div className="text-2xl font-bold text-slate-800 font-montserrat group-hover:text-blue-600 transition-colors">
+            <span className="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
               Cerny Remodeling
-            </div>
+            </span>
           </Link>
           
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Home
+            </Link>
+            
+            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              About
             </a>
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="font-semibold text-slate-700 hover:text-blue-600 transition-colors flex items-center gap-1 text-sm uppercase tracking-wide">
+              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1 font-medium">
                 Services
-                <ChevronDown size={14} />
+                <ChevronDown size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 rounded-lg">
+              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50 rounded-md min-w-[180px]">
                 {serviceLinks.map((service) => (
                   <DropdownMenuItem key={service.name} asChild>
                     <Link 
                       to={service.href} 
-                      className="font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors px-4 py-3 cursor-pointer text-sm"
+                      className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors px-4 py-2 cursor-pointer font-medium block w-full"
                     >
                       {service.name}
                     </Link>
@@ -61,20 +66,18 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <a href="#featured-projects" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
+            <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Featured Projects
             </a>
-            <a href="#about" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
-              About
-            </a>
-            <a href="#contact" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
-              Contact
+            
+            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+              Contact Us
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-slate-800"
+            className="lg:hidden text-gray-800 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,21 +86,25 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-100 mt-2 pt-4">
-            <div className="flex flex-col gap-4">
-              <a href="#" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
+          <div className="lg:hidden py-4 border-t border-gray-100">
+            <div className="flex flex-col space-y-4">
+              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Home
+              </Link>
+              
+              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                About
               </a>
               
               {/* Mobile Services Menu */}
               <div className="flex flex-col">
-                <span className="font-semibold text-slate-700 mb-2 text-sm uppercase tracking-wide">Services</span>
-                <div className="flex flex-col gap-2 ml-4">
+                <span className="text-gray-700 font-medium mb-2">Services</span>
+                <div className="flex flex-col space-y-2 ml-4">
                   {serviceLinks.map((service) => (
                     <Link 
                       key={service.name}
                       to={service.href} 
-                      className="font-medium text-slate-600 hover:text-blue-600 transition-colors text-sm"
+                      className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
                     >
                       {service.name}
                     </Link>
@@ -105,14 +112,12 @@ const Header = () => {
                 </div>
               </div>
               
-              <a href="#featured-projects" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
+              <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
                 Featured Projects
               </a>
-              <a href="#about" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
-                About
-              </a>
-              <a href="#contact" className="font-semibold text-slate-700 hover:text-blue-600 transition-colors text-sm uppercase tracking-wide">
-                Contact
+              
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                Contact Us
               </a>
             </div>
           </div>
