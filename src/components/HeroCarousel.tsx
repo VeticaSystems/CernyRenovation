@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // --- 1. Add TypeScript interfaces ---
@@ -11,7 +10,7 @@ interface Slide {
 // --- Slides array ---
 const slides: Slide[] = [
   {
-    image: '/lovable-uploads/73b44247-0967-4f9f-882f-4b9e4a0a7b37.png', // User's new wide window image
+    image: '/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png', // Updated to use the new deck image
     title: '',
     subtitle: '',
   },
@@ -337,4 +336,3 @@ const HeroCarousel = () => {
 };
 
 export default HeroCarousel;
-
