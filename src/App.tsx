@@ -13,6 +13,9 @@ import Painting from "./pages/services/Painting";
 import Tile from "./pages/services/Tile";
 import Fencing from "./pages/services/Fencing";
 import Decking from "./pages/services/Decking";
+import Basements from "./pages/services/Basements";
+import Additions from "./pages/services/Additions";
+import InteriorDesign from "./pages/services/InteriorDesign";
 import Survey from "./pages/Survey";
 import FeedbackWidget from "./components/FeedbackWidget";
 
@@ -35,6 +38,9 @@ const App = () => (
           <Route path="/services/tile" element={<Tile />} />
           <Route path="/services/fencing" element={<Fencing />} />
           <Route path="/services/decking" element={<Decking />} />
+          <Route path="/services/basements" element={<Basements />} />
+          <Route path="/services/additions" element={<Additions />} />
+          <Route path="/services/interior-design" element={<InteriorDesign />} />
           {/* Feedback Survey */}
           <Route path="/survey" element={<Survey />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

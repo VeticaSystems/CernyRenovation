@@ -9,10 +9,10 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-montserrat">
+    <div className="min-h-screen font-montserrat bg-gray-50">
       <Header />
       
-      <main className="pt-20">
+      <main className="pt-16">
         <HeroCarousel />
         <Services />
         <About />
@@ -26,4 +26,3 @@ const Index = () => {
 };
 
 export default Index;
-
