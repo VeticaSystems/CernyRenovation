@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // --- 1. Add TypeScript interfaces ---
@@ -10,12 +11,12 @@ interface Slide {
 // --- Slides array ---
 const slides: Slide[] = [
   {
-    image: '/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png', // Updated to use the new deck image
+    image: '/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png',
     title: '',
     subtitle: '',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600', // Original bathroom pic
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
     title: 'Bathrooms That Feel Like Home',
     subtitle: '',
   }
@@ -48,8 +49,7 @@ const HeroCarousel = () => {
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [progress, setProgress] = useState<number>(0);
 
-  // --- 5. Improved loading states ---
-  // Preload all images, set loaded/error state per image
+  // --- Preload all images, set loaded/error state per image ---
   useEffect(() => {
     slides.forEach((slide, index) => {
       preloadImage(slide.image).then((result) => {
@@ -102,11 +102,11 @@ const HeroCarousel = () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, [paused, startCarousel, stopCarousel]);
 
-  // 4. Pause on hover for desktop users
+  // Pause on hover for desktop users
   const handleMouseEnter = () => setPaused(true);
   const handleMouseLeave = () => setPaused(false);
 
-  // 2. Keyboard navigation
+  // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowRight') {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -115,13 +115,12 @@ const HeroCarousel = () => {
       setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
       setPaused(true);
     } else if (e.key === ' ' || e.key === 'Spacebar') {
-      // space bar toggles pause/play
       setPaused((prev) => !prev);
       e.preventDefault();
     }
   };
 
-  // 3. Touch/swipe support for mobile
+  // Touch/swipe support for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
   };
@@ -129,12 +128,9 @@ const HeroCarousel = () => {
     if (touchStartX === null) return;
     const dx = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 50) {
-      // Only trigger if swipe distance is enough
       if (dx < 0) {
-        // swipe left = next
         setCurrentSlide((prev) => (prev + 1) % slides.length);
       } else {
-        // swipe right = prev
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
       }
       setPaused(true);
@@ -142,11 +138,6 @@ const HeroCarousel = () => {
     setTouchStartX(null);
   };
 
-  // 6. Accessibility: Focus indicators, ARIA, tab-trap
-  // Trap tab key on indicators
-  const indicatorsRef = useRef<HTMLDivElement | null>(null);
-
-  // Focus main section so keyboard navigation is active when user tabs into carousel
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.setAttribute('tabIndex', '0');
@@ -179,12 +170,11 @@ const HeroCarousel = () => {
       setProgress(0);
       cancelAnimationFrame(frame);
     };
-    // Reset progress when currentSlide or paused changes
   }, [currentSlide, paused]);
 
   return (
     <section
-      className="relative w-full h-[70vh] overflow-hidden outline-none"
+      className="relative w-full h-[85vh] overflow-hidden outline-none"
       tabIndex={0}
       ref={containerRef as any}
       aria-label="Showcase image carousel"
@@ -200,9 +190,8 @@ const HeroCarousel = () => {
           ? slide.image
           : imageErrors[index]
             ? FALLBACK_IMAGE
-            : undefined; // loading
+            : undefined;
 
-        // Determine if this is the first slide (window image)
         const isWindowSlide = index === 0;
 
         return (
@@ -215,7 +204,7 @@ const HeroCarousel = () => {
             style={
               isWindowSlide
                 ? {
-                    background: '#111827', // dark gray bg for window slide
+                    background: '#111827',
                     position: 'absolute',
                     inset: 0,
                   }
@@ -230,12 +219,11 @@ const HeroCarousel = () => {
           >
             {isWindowSlide && showImage ? (
               <>
-                {/* Window image: use object-cover so it stretches and fills the hero */}
                 <div className="absolute inset-0 flex justify-center items-center z-10">
                   <img
                     src={showImage}
                     alt=""
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/40 bg-black/20"
+                    className="w-full h-full object-cover"
                     style={{
                       maxWidth: '100%',
                       maxHeight: '100%',
@@ -243,20 +231,16 @@ const HeroCarousel = () => {
                     draggable={false}
                   />
                 </div>
-                {/* Overlay for color/darkness for legibility */}
-                <div className="absolute inset-0 bg-black/30 z-20" />
+                <div className="absolute inset-0 bg-black/20 z-20" />
               </>
             ) : (
               <>
-                {/* Loading skeleton for image */}
                 {!showImage && (
                   <div className="w-full h-full flex justify-center items-center bg-cerny-light-gray">
                     <div className="rounded-full w-20 h-20 animate-pulse bg-muted" />
                   </div>
                 )}
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40" />
-                {/* Slide text overlay */}
                 {index !== 0 && (slide.title || slide.subtitle) && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-light-purple max-w-4xl px-4 animate-fade-in">
@@ -273,7 +257,6 @@ const HeroCarousel = () => {
                     </div>
                   </div>
                 )}
-                {/* Paused badge for non-window slides only */}
                 {index === currentSlide && paused && !isWindowSlide && (
                   <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow">
                     Paused
@@ -281,14 +264,6 @@ const HeroCarousel = () => {
                 )}
               </>
             )}
-            {/* Remove paused badge for window slide */}
-            {/* The following is removed:
-            {isWindowSlide && index === currentSlide && paused && (
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-semibold shadow z-50">
-                Paused
-              </div>
-            )}
-            */}
           </div>
         );
       })}
@@ -298,7 +273,6 @@ const HeroCarousel = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2"
         role="tablist"
         aria-label="Slide navigation"
-        ref={indicatorsRef}
       >
         {slides.map((_, index) => (
           <button
@@ -321,7 +295,7 @@ const HeroCarousel = () => {
           />
         ))}
       </div>
-      {/* Progress bar for auto-advancing (optically shows timer) */}
+      {/* Progress bar */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[120px] h-1 bg-white/30 rounded overflow-hidden z-50">
         <div
           className="bg-light-purple h-1 transition-all duration-100"

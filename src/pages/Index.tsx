@@ -9,10 +9,10 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-montserrat bg-gray-50">
+    <div className="min-h-screen font-montserrat bg-white">
       <Header />
       
-      <main className="pt-16">
+      <main className="pt-14">
         <HeroCarousel />
         <Services />
         <About />

@@ -29,16 +29,16 @@ const services = [
     link: '/services/tile'
   },
   {
-    image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400',
-    title: 'Fencing',
-    description: 'Custom fencing solutions for privacy, security, and aesthetic enhancement of your property.',
-    link: '/services/fencing'
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
+    title: 'Basement Renovation',
+    description: 'Transform your basement into a functional living space with expert renovation services.',
+    link: '/services/basements'
   },
   {
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400',
-    title: 'Decking and Patio',
-    description: 'Beautiful outdoor living spaces with custom decks, patios, and entertainment areas.',
-    link: '/services/decking'
+    title: 'Home Additions',
+    description: 'Expand your living space with custom home additions designed to your specifications.',
+    link: '/services/additions'
   }
 ];
 
@@ -58,24 +58,24 @@ const Services = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-40 object-cover"
+                className="w-full h-48 object-cover"
               />
-              <div className="flex flex-col flex-1 justify-between p-6">
+              <div className="flex flex-col flex-1 justify-between p-5">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-3 text-light-purple font-montserrat">
+                  <h3 className="text-xl font-semibold mb-3 text-light-purple font-montserrat">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 text-base leading-relaxed font-montserrat">
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed font-montserrat">
                     {service.description}
                   </p>
                 </div>
                 <Link to={service.link} className="mt-auto block">
                   <Button
                     variant="outline"
-                    className="w-full justify-between border-cerny-orange text-cerny-orange hover:bg-cerny-orange hover:text-white transition-colors font-semibold text-base rounded-lg py-2"
+                    className="w-full justify-between border-cerny-orange text-cerny-orange hover:bg-cerny-orange hover:text-white transition-colors font-semibold text-sm rounded-lg py-1.5 h-auto"
                   >
                     Learn More
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
               </div>
@@ -88,4 +88,3 @@ const Services = () => {
 };
 
 export default Services;
-
