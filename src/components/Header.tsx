@@ -32,9 +32,9 @@ const Header = () => {
           >
             {/* Responsive logo sizing - larger on desktop, mobile-friendly */}
             <img
-              src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
+              src="/lovable-uploads/284bbb2d-843f-467d-95f6-a7e5479acc79.png"
               alt="Cerny Remodeling - Licensed & Insured Home Remodeling"
-              className="h-28 sm:h-32 md:h-42 w-auto -my-3 sm:-my-4 md:-my-6 filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
+              className="h-32 sm:h-36 md:h-48 w-auto -my-4 sm:-my-6 md:-my-8 filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
               style={{ zIndex: 20 }}
             />
           </Link>

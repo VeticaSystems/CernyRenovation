@@ -17,7 +17,7 @@ const Hero = () => {
         src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"
         alt="Beautiful home exterior showcasing Cerny Remodeling craftsmanship"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, objectPosition: 'center top 120px' }}
+        style={{ zIndex: 0, objectPosition: 'center top 300px' }}
       />
       {/* Gradient Overlay for Readability */}
       <div 
