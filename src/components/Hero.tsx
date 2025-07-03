@@ -26,6 +26,26 @@ const Hero = () => {
       
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center w-full text-center px-4 pt-24">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-4xl">
+          Transform Your Home Today
+        </h1>
+        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
+          Expert Design · Build · Remodel
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            to="/survey"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+          >
+            Get Free Quote
+          </Link>
+          <a
+            href="#featured-projects"
+            className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-lg text-lg font-semibold transition-colors backdrop-blur-sm"
+          >
+            View Our Work
+          </a>
+        </div>
       </div>
     </section>
   );
