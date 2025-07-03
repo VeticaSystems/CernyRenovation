@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       className="relative flex items-center justify-center w-full"
       style={{ 
-        height: 'calc(100vh - 6rem)',
+        height: 'calc(100vh - 4rem)',
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
         marginRight: 'calc(-50vw + 50%)',
@@ -16,7 +16,7 @@ const Hero = () => {
         src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, objectPosition: 'center 40%' }}
+        style={{ zIndex: 0, objectPosition: 'center 25%' }}
       />
       {/* Gradient Overlay for Readability */}
       <div 
