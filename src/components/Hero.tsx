@@ -14,8 +14,8 @@ const Hero = () => {
     >
       {/* Hero Background Image - positioned to showcase walkway and entrance */}
       <img
-        src="/lovable-uploads/69f8568a-3597-4a77-a308-6233f64c5737.png"
-        alt="Beautiful walkway and entrance showcasing Cerny Remodeling craftsmanship"
+        src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
+        alt="Beautiful home entrance showcasing Cerny Remodeling craftsmanship"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0, objectPosition: 'center center' }}
       />
