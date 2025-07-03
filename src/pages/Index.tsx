@@ -1,9 +1,8 @@
 
 import Header from '../components/Header';
-import Hero from '../components/Hero';
+import HeroCarousel from '../components/HeroCarousel';
 import ProcessSection from '../components/ProcessSection';
-import Testimonials from '../components/Testimonials';
-import ContactSection from '../components/ContactSection';
+import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -11,11 +10,10 @@ const Index = () => {
     <div className="min-h-screen font-montserrat bg-white">
       <Header />
       
-      <main>
-        <Hero />
+      <main className="pt-14">
+        <HeroCarousel />
         <ProcessSection />
-        <Testimonials />
-        <ContactSection />
+        <ContactForm />
       </main>
       
       <Footer />

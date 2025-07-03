@@ -1,72 +1,113 @@
-const steps = [
-  {
-    title: "Vision & Discovery",
-    desc: "On-site session to assess your space, inspirations, and goals. You get a clear project roadmap.",
-    icon: "🔎",
-  },
-  {
-    title: "Concept Activation",
-    desc: "We craft a custom package with 3D renderings and mood boards, tailored to your style.",
-    icon: "🎨",
-  },
-  {
-    title: "Scope & Planning",
-    desc: "Transparent scope, itemized cost, and timeline—no surprises down the line.",
-    icon: "📋",
-  },
-  {
-    title: "Build & Quality",
-    desc: "Our expert crew builds, with weekly progress and strict quality checks.",
-    icon: "🛠️",
-  },
-  {
-    title: "Reveal & Celebrate",
-    desc: "Final walk-through, touch-ups, and a celebratory handoff to your dream space.",
-    icon: "🎉",
-  },
-];
+import { Eye, Palette, FileText, Settings, Star } from 'lucide-react';
 
-const ProcessSection = () => (
-  <section className="py-20 bg-white">
-    {/* Hero Image Section */}
-    <div className="relative h-96 mb-20 overflow-hidden">
-      <img 
-        src="/lovable-uploads/932fcad4-4edd-4383-8ce1-aad8d00a1509.png" 
-        alt="Architectural design sketch" 
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent"></div>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h2 className="text-5xl md:text-6xl font-bold font-montserrat mb-4">
-            From Vision to Reality
-          </h2>
-          <p className="text-xl md:text-2xl font-montserrat max-w-3xl mx-auto px-4">
-            Our proven 5-step process ensures your remodeling project exceeds expectations
+const ProcessSection = () => {
+  const processSteps = [
+    {
+      number: "01",
+      title: "Vision",
+      description: "We listen to your ideas and understand your needs to capture your unique vision for the space.",
+      icon: Eye
+    },
+    {
+      number: "02", 
+      title: "Concept",
+      description: "Our team develops creative design concepts that bring your vision to life with style and functionality.",
+      icon: Palette
+    },
+    {
+      number: "03",
+      title: "Planning", 
+      description: "Detailed planning and technical drawings ensure every aspect is carefully considered before we begin.",
+      icon: FileText
+    },
+    {
+      number: "04",
+      title: "Mobilization",
+      description: "Our skilled craftsmen get to work, transforming your space with precision and attention to detail.",
+      icon: Settings
+    },
+    {
+      number: "05",
+      title: "Reveal",
+      description: "We reveal your beautifully transformed space, exceeding expectations and bringing joy to your home.",
+      icon: Star
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-white">
+      {/* Hero Image Section */}
+      <div className="relative h-96 mb-20 overflow-hidden">
+        <img 
+          src="/lovable-uploads/932fcad4-4edd-4383-8ce1-aad8d00a1509.png" 
+          alt="Architectural design sketch" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-light-purple/80 to-cerny-orange/60"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h2 className="text-5xl md:text-6xl font-bold font-montserrat mb-4">
+              From Vision to Reality
+            </h2>
+            <p className="text-xl md:text-2xl font-montserrat max-w-3xl mx-auto px-4">
+              Our proven 5-step process ensures your remodeling project exceeds expectations
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Process Steps */}
+      <div className="container max-w-6xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl font-bold text-light-purple font-montserrat mb-4">
+            How We Operate
+          </h3>
+          <p className="text-xl text-tenorite font-montserrat max-w-2xl mx-auto">
+            Every project follows our time-tested methodology, ensuring quality results and a smooth experience from start to finish.
           </p>
         </div>
-      </div>
-    </div>
 
-    {/* Process Steps */}
-    <div className="relative w-full py-12 bg-gradient-to-b from-gray-50 via-white to-gray-100">
-      <div className="container mx-auto px-6">
-        <h3 className="text-4xl font-bold text-center mb-10 text-gray-800">Our 5-Step Process</h3>
-        <div className="flex flex-wrap justify-center gap-8">
-          {steps.map((step, i) => (
-            <div key={step.title}
-              className="w-full sm:w-[320px] bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition hover:scale-105"
-            >
-              <span className="text-4xl mb-3">{step.icon}</span>
-              <h4 className="text-2xl font-semibold text-purple-700 mb-2">{step.title}</h4>
-              <p className="text-gray-700 text-lg">{step.desc}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {processSteps.map((step, index) => {
+            const IconComponent = step.icon;
+            return (
+              <div 
+                key={step.number}
+                className="relative group hover:transform hover:scale-105 transition-all duration-300"
+              >
+                {/* Connecting line for desktop */}
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-16 left-full w-8 h-0.5 bg-gradient-to-r from-light-purple to-cerny-orange z-10"></div>
+                )}
+                
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 group-hover:shadow-xl transition-shadow h-full">
+                  {/* Number Badge */}
+                  <div className="relative mb-6">
+                    <div className="bg-gradient-to-r from-light-purple to-cerny-orange text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg">
+                      <span className="text-xl font-bold font-montserrat">{step.number}</span>
+                    </div>
+                    {/* Icon */}
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white rounded-full w-8 h-8 flex items-center justify-center border-2 border-cerny-orange">
+                      <IconComponent className="w-4 h-4 text-cerny-orange" />
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-light-purple font-montserrat mb-4">
+                      {step.title}
+                    </h4>
+                    <p className="text-tenorite font-montserrat leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
-  </section>
-);
-
+    </section>
+  );
+};
 
 export default ProcessSection;
