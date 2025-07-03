@@ -35,9 +35,6 @@ const Header = () => {
               alt="Cerny Remodeling"
               className="h-16 w-auto filter drop-shadow-lg"
             />
-            <span className="text-xl font-semibold text-gray-900">
-              Cerny Remodeling
-            </span>
           </Link>
           
           {/* Desktop Nav */}
