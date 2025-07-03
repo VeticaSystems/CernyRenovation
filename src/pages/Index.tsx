@@ -1,6 +1,7 @@
 
 import Header from '../components/Header';
 import HeroCarousel from '../components/HeroCarousel';
+import ProcessSection from '../components/ProcessSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
@@ -11,6 +12,7 @@ const Index = () => {
       
       <main className="pt-14">
         <HeroCarousel />
+        <ProcessSection />
         <ContactForm />
       </main>
       
