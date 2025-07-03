@@ -44,16 +44,6 @@ const ProcessSection = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-light-purple/80 to-cerny-orange/60"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h2 className="text-5xl md:text-6xl font-bold font-montserrat mb-4">
-              From Vision to Reality
-            </h2>
-            <p className="text-xl md:text-2xl font-montserrat max-w-3xl mx-auto px-4">
-              Our proven 5-step process ensures your remodeling project exceeds expectations
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Process Steps */}
