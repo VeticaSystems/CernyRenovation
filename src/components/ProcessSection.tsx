@@ -49,9 +49,6 @@ const ProcessSection = () => {
             <h2 className="text-5xl md:text-6xl font-bold font-montserrat mb-4">
               From Vision to Reality
             </h2>
-            <p className="text-xl md:text-2xl font-montserrat max-w-3xl mx-auto px-4">
-              Our proven 5-step process ensures your remodeling project exceeds expectations
-            </p>
           </div>
         </div>
       </div>
