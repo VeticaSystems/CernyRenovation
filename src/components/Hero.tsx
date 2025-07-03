@@ -13,7 +13,7 @@ const Hero = () => {
     >
       {/* Hero Background Image */}
       <img
-        src="/lovable-uploads/d5083c45-0d5b-48e2-96cb-47de0fc72cfd.png"
+        src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{ zIndex: 0 }}
@@ -26,9 +26,6 @@ const Hero = () => {
       
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center w-full text-center px-4 pt-24">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-6 font-montserrat">
-          From Vision to Reality
-        </h1>
       </div>
     </section>
   );
