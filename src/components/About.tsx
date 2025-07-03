@@ -26,11 +26,11 @@ const About = () => {
             <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
               {/* Photo */}
               <div className="flex-shrink-0 flex justify-center lg:block mb-8 lg:mb-0">
-                <div className="w-64 h-72 rounded-2xl overflow-hidden bg-black">
+                <div className="w-64 h-80 rounded-2xl overflow-hidden bg-black">
                   <img
-                    src="/lovable-uploads/49700280-9e5d-468c-b2dd-d17bd12abef2.png"
+                    src="/lovable-uploads/4eb5d1b7-5c12-4617-95b8-73cf65f4e36b.png"
                     alt="Josef Cerny, Founder & Lead Technician"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
