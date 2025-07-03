@@ -14,7 +14,7 @@ const slides: Slide[] = [
     subtitle: '',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
+    image: '/lovable-uploads/b27b4e29-6e0e-48ef-9c88-60280ab017a8.png',
     title: '',
     subtitle: '',
   }
