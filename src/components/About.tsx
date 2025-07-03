@@ -1,5 +1,6 @@
 
 import { Award, Users, Shield, CheckCircle } from 'lucide-react';
+import Testimonials from './Testimonials';
 
 const About = () => {
   return (
@@ -131,6 +132,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-r from-light-purple to-cerny-orange">
