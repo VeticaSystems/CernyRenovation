@@ -105,19 +105,6 @@ const ProcessSection = () => {
             );
           })}
         </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-tenorite font-montserrat mb-6">
-            Ready to start your transformation journey?
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-block bg-gradient-to-r from-light-purple to-cerny-orange text-white px-8 py-4 rounded-full font-semibold font-montserrat hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Get Your Free Consultation
-          </a>
-        </div>
       </div>
     </section>
   );
