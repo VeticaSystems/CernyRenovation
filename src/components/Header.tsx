@@ -21,62 +21,72 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
-      <div className="container max-w-7xl mx-auto px-6">
-        <nav className="flex justify-between items-center h-14">
+    <header className="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-md z-50">
+      <div className="container mx-auto px-6 py-4">
+        <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group cursor-pointer">
-            <img 
-              src="/lovable-uploads/b9583cff-a331-4a7d-b6c4-04b100bb437a.png" 
-              alt="Cerny Remodeling Logo" 
-              className="h-7 w-auto"
+          <Link
+            to="/"
+            className="flex items-center space-x-3"
+          >
+            <img
+              src="/src/assets/cerny-logo.svg"
+              alt="Cerny Remodeling"
+              className="h-12 w-auto filter drop-shadow-lg"
             />
-            <span className="text-lg font-medium text-gray-800">
+            <span className="text-xl font-semibold text-gray-900">
               Cerny Remodeling
             </span>
           </Link>
           
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
               Home
             </Link>
-            
-            <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link
+              to="/about"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
               About Us
             </Link>
             
-            {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-blue-600 transition-colors flex items-center gap-1">
-                Services
-                <ChevronDown size={16} />
+              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-700 hover:text-gray-900 transition-colors">
+                Services <ChevronDown size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50 rounded-md min-w-[180px]">
-                {serviceLinks.map((service) => (
-                  <DropdownMenuItem key={service.name} asChild>
-                    <Link 
-                      to={service.href} 
-                      className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors px-4 py-2 cursor-pointer block w-full"
+              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg rounded-md min-w-[180px]">
+                {serviceLinks.map((s) => (
+                  <DropdownMenuItem key={s.name} asChild>
+                    <Link
+                      to={s.href}
+                      className="block w-full px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
                     >
-                      {service.name}
+                      {s.name}
                     </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            
-            <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a
+              href="#featured-projects"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
               Featured Projects
             </a>
-            
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a
+              href="#contact"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
+            >
               Contact Us
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
+          {/* Mobile Toggle */}
+          <button
             className="lg:hidden text-gray-800 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -86,39 +96,26 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-100">
+          <div className="lg:hidden mt-2 border-t border-gray-200 pt-4">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
-                Home
-              </Link>
-              
-              <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
-                About Us
-              </Link>
-              
-              {/* Mobile Services Menu */}
-              <div className="flex flex-col">
-                <span className="text-gray-700 mb-2">Services</span>
-                <div className="flex flex-col space-y-2 ml-4">
-                  {serviceLinks.map((service) => (
-                    <Link 
-                      key={service.name}
-                      to={service.href} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors"
+              <Link to="/" className="text-gray-700 hover:text-gray-900 transition-colors">Home</Link>
+              <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About Us</Link>
+              <div>
+                <span className="block text-gray-700 mb-2">Services</span>
+                <div className="ml-4 flex flex-col space-y-2">
+                  {serviceLinks.map((s) => (
+                    <Link
+                      key={s.name}
+                      to={s.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
                     >
-                      {service.name}
+                      {s.name}
                     </Link>
                   ))}
                 </div>
               </div>
-              
-              <a href="#featured-projects" className="text-gray-700 hover:text-blue-600 transition-colors">
-                Featured Projects
-              </a>
-              
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
-                Contact Us
-              </a>
+              <a href="#featured-projects" className="text-gray-700 hover:text-gray-900 transition-colors">Featured Projects</a>
+              <a href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact Us</a>
             </div>
           </div>
         )}
