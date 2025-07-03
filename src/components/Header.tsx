@@ -23,8 +23,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-md z-50">
-      <div className="container mx-auto px-6 py-6">
-        <nav className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-6 py-4">
+        <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
