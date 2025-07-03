@@ -276,17 +276,6 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
         )}
       </div>
 
-      {/* Newsletter Signup */}
-      <div className="flex items-center space-x-2">
-        <Checkbox
-          id="newsletter"
-          checked={formData.newsletter}
-          onCheckedChange={(checked) => handleCheckboxChange('newsletter', checked as boolean)}
-        />
-        <Label htmlFor="newsletter" className="text-sm">
-          Subscribe to our newsletter for design inspiration and remodeling tips
-        </Label>
-      </div>
     </div>
   );
 };

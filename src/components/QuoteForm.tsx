@@ -17,8 +17,7 @@ const QuoteForm = () => {
     budget: '',
     hearAboutUs: '',
     preferredContact: '',
-    bestTimeToCall: '',
-    newsletter: false
+    bestTimeToCall: ''
   });
   
   const { toast } = useToast();
@@ -44,8 +43,7 @@ const QuoteForm = () => {
       budget: '',
       hearAboutUs: '',
       preferredContact: '',
-      bestTimeToCall: '',
-      newsletter: false
+      bestTimeToCall: ''
     });
   };
 
