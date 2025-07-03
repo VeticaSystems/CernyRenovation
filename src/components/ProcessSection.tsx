@@ -39,7 +39,7 @@ const ProcessSection = () => {
       {/* Hero Image Section */}
       <div className="relative h-96 mb-20 overflow-hidden">
         <img 
-          src="/lovable-uploads/49700280-9e5d-468c-b2dd-d17bd12abef2.png" 
+          src="/lovable-uploads/932fcad4-4edd-4383-8ce1-aad8d00a1509.png" 
           alt="Architectural design sketch" 
           className="w-full h-full object-cover"
         />
