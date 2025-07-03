@@ -4,70 +4,65 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="container mx-auto flex flex-col items-center px-4">
-        <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start md:space-x-16 max-w-2xl">
-          {/* Contact Us */}
-          <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h4 className="text-lg font-bold mb-2 text-white">
-              Contact Us
-            </h4>
-            <p className="text-sm mb-1 text-white">
-              Phone:{" "}
-              <span className="whitespace-nowrap font-semibold text-cerny-orange">
-                (651) 278-4835
-              </span>
-            </p>
-            <p className="text-sm break-all text-white">
-              Email:{" "}
-              <span className="font-semibold text-cerny-orange">
-                info@cernyremodeling.com
-              </span>
-            </p>
+    <footer className="bg-cerny-navy text-white py-12 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-8">
+        {/* Brand/Logo */}
+        <div className="text-3xl font-extrabold tracking-tight mb-4 md:mb-0">
+          Cerny Remodeling
+        </div>
+        
+        {/* Navigation Links */}
+        <nav className="flex flex-wrap gap-8 text-lg font-semibold">
+          <Link to="/" className="hover:text-cerny-orange transition-colors">Home</Link>
+          <Link to="/about" className="hover:text-cerny-orange transition-colors">About</Link>
+          <a href="#contact" className="hover:text-cerny-orange transition-colors">Services</a>
+          <a href="#contact" className="hover:text-cerny-orange transition-colors">Contact</a>
+        </nav>
+      </div>
+      
+      {/* Divider */}
+      <div className="border-t border-white/20 my-8" />
+      
+      {/* Contact Info, Legal + Socials */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between items-center gap-6">
+        {/* Contact Info */}
+        <div className="flex flex-col sm:flex-row gap-6 text-sm">
+          <div className="text-center sm:text-left">
+            <span className="text-white/80">Phone: </span>
+            <span className="font-semibold text-cerny-orange">(651) 278-4835</span>
           </div>
-
-          {/* Connect & Verify */}
-          <div className="text-center flex flex-col items-center">
-            <h4 className="text-lg font-bold mb-2 text-white">
-              Connect &amp; Verify
-            </h4>
-            <p className="text-sm font-semibold text-green-400 mb-3">
-              Licensed &amp; Insured &#10003;
-            </p>
-            {/* Social Icons */}
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook size={24} strokeWidth={2} />
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                className="transition-transform hover:scale-110 hover:text-cerny-orange text-white"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin size={24} strokeWidth={2} />
-              </a>
-            </div>
+          <div className="text-center sm:text-left">
+            <span className="text-white/80">Email: </span>
+            <span className="font-semibold text-cerny-orange">info@cernyremodeling.com</span>
+          </div>
+          <div className="text-center sm:text-left">
+            <span className="font-semibold text-green-400">Licensed & Insured ✓</span>
           </div>
         </div>
-
-        <div className="mt-6 w-full text-center space-y-1">
-          <p className="text-sm text-white">
-            © 2025 Cerny Remodeling LLC. All rights reserved.
-          </p>
-          <Link
-            to="/survey"
-            className="inline-block text-cerny-orange font-semibold underline underline-offset-2 hover:text-cerny-orange-dark transition-colors text-sm"
-          >
-            Leave Detailed Feedback
-          </Link>
+        
+        {/* Legal + Socials */}
+        <div className="flex flex-col sm:flex-row items-center gap-6 text-sm text-white/60">
+          <div>&copy; {new Date().getFullYear()} Cerny Remodeling LLC. All rights reserved.</div>
+          <div className="flex gap-4">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="transition-colors hover:text-cerny-orange"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook size={20} strokeWidth={2} />
+            </a>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="transition-colors hover:text-cerny-orange"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={20} strokeWidth={2} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
