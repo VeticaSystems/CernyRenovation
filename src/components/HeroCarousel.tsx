@@ -15,7 +15,7 @@ const slides: Slide[] = [
   },
   {
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1600',
-    title: 'Bathrooms That Feel Like Home',
+    title: '',
     subtitle: '',
   }
 ];
