@@ -81,6 +81,13 @@ const QuoteForm = () => {
         />
 
         <div className="pt-4">
+          {/* Trust indicator */}
+          <div className="text-center mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+            <p className="text-blue-700 text-sm font-semibold">
+              💬 99% of users get a personalized response within 24 hours
+            </p>
+          </div>
+          
           <Button 
             type="submit" 
             className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 text-lg font-semibold rounded-lg shadow-lg transform hover:scale-[1.02] transition-all duration-200"

@@ -3,6 +3,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useState } from 'react';
+import imageCompression from 'browser-image-compression';
 
 interface FormFieldsProps {
   formData: any;
@@ -12,6 +14,40 @@ interface FormFieldsProps {
 }
 
 const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckboxChange }: FormFieldsProps) => {
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [previews, setPreviews] = useState<string[]>([]);
+  const [uploadError, setUploadError] = useState("");
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []).slice(0, 3);
+    let compressedFiles: File[] = [];
+    let previewURLs: string[] = [];
+
+    for (let file of files) {
+      // Only allow jpg, jpeg, png, pdf
+      if (!/(\.jpg|\.jpeg|\.png|\.pdf)$/i.test(file.name)) {
+        setUploadError("Only JPG, PNG, and PDF files are allowed.");
+        return;
+      }
+      if (file.size > 10 * 1024 * 1024 && !/\.pdf$/i.test(file.name)) {
+        // Compress images over 10MB (not PDFs)
+        try {
+          file = await imageCompression(file, { maxSizeMB: 2, useWebWorker: true });
+        } catch {
+          setUploadError("Image compression failed. Try a smaller photo.");
+          return;
+        }
+      }
+      compressedFiles.push(file);
+      if (!/\.pdf$/i.test(file.name)) {
+        previewURLs.push(URL.createObjectURL(file));
+      }
+    }
+    setSelectedFiles(compressedFiles);
+    setPreviews(previewURLs);
+    setUploadError("");
+  };
+
   return (
     <div className="space-y-4">
       {/* Personal Information */}
@@ -25,6 +61,7 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
             onChange={handleChange}
             required
             placeholder="Your name"
+            autoComplete="name"
           />
         </div>
         <div>
@@ -37,6 +74,7 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
             onChange={handleChange}
             required
             placeholder="(651) 278-4835"
+            autoComplete="tel"
           />
         </div>
       </div>
@@ -51,6 +89,7 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
           onChange={handleChange}
           required
           placeholder="your@email.com"
+          autoComplete="email"
         />
       </div>
 
@@ -198,6 +237,43 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
           placeholder="Tell us about your project vision, specific requirements, challenges, or inspiration..."
           rows={4}
         />
+      </div>
+
+      {/* Photo Upload */}
+      <div>
+        <Label htmlFor="photos">Upload Project Photos (Optional)</Label>
+        <p className="text-sm text-slate-500 mb-2">
+          Upload up to 3 photos (JPG, PNG, or PDF, max 10MB each)
+        </p>
+        <Input
+          id="photos"
+          type="file"
+          accept=".jpg,.jpeg,.png,.pdf"
+          multiple
+          onChange={handleFileChange}
+          className="cursor-pointer"
+        />
+        {/* Image previews */}
+        {previews.length > 0 && (
+          <div className="flex gap-2 mt-3">
+            {previews.map((url, idx) => (
+              <img 
+                key={idx} 
+                src={url} 
+                alt={`Preview ${idx + 1}`} 
+                className="h-16 w-16 object-cover rounded border" 
+              />
+            ))}
+          </div>
+        )}
+        {selectedFiles.length > 0 && selectedFiles.some(f => f.name.endsWith('.pdf')) && (
+          <div className="mt-2 text-sm text-slate-600">
+            📄 {selectedFiles.filter(f => f.name.endsWith('.pdf')).length} PDF file(s) selected
+          </div>
+        )}
+        {uploadError && (
+          <div className="text-red-600 text-sm mt-2 font-medium">{uploadError}</div>
+        )}
       </div>
 
       {/* Newsletter Signup */}
