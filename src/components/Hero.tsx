@@ -1,7 +1,6 @@
 const Hero = () => (
   <section
-    className="relative flex items-center justify-center w-full"
-    style={{ minHeight: 'calc(100vh - 6rem)' }} // header is h-24 = 6rem
+    className="relative flex items-center justify-center w-full min-h-screen"
   >
     <img
       src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"

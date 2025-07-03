@@ -24,15 +24,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-white/60 backdrop-blur-lg z-50 shadow-md">
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-24">
-          <Link to="/" className="flex items-center space-x-5">
+          <Link to="/" className="flex items-center">
             <img
               src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
               alt="Cerny Remodeling"
               className="h-24 w-auto filter drop-shadow-[0_4px_24px_rgba(0,128,64,0.22)]"
             />
-            <span className="text-2xl font-bold text-gray-900 tracking-tight">
-              Cerny Remodeling
-            </span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-10">
