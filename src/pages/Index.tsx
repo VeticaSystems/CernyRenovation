@@ -1,6 +1,6 @@
 
 import Header from '../components/Header';
-import HeroCarousel from '../components/HeroCarousel';
+import Hero from '../components/Hero';
 import ProcessSection from '../components/ProcessSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
@@ -10,8 +10,8 @@ const Index = () => {
     <div className="min-h-screen font-montserrat bg-white">
       <Header />
       
-      <main className="pt-14">
-        <HeroCarousel />
+      <main>
+        <Hero />
         <ProcessSection />
         <ContactForm />
       </main>
