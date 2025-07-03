@@ -3,11 +3,26 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import imageCompression from 'browser-image-compression';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  propertyType: string;
+  zipCode: string;
+  projectType: string;
+  timeline: string;
+  message: string;
+  budget: string;
+  hearAboutUs: string;
+  preferredContact: string;
+  bestTimeToCall: string;
+}
+
 interface FormFieldsProps {
-  formData: any;
+  formData: FormData;
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleSelectChange: (name: string, value: string) => void;
   handleCheckboxChange: (name: string, checked: boolean) => void;
@@ -17,6 +32,11 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
   const [uploadError, setUploadError] = useState("");
+
+  // Memory cleanup for preview URLs
+  useEffect(() => {
+    return () => previews.forEach(url => URL.revokeObjectURL(url));
+  }, [previews]);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []).slice(0, 3);
@@ -266,13 +286,16 @@ const FormFields = ({ formData, handleChange, handleSelectChange, handleCheckbox
             ))}
           </div>
         )}
-        {selectedFiles.length > 0 && selectedFiles.some(f => f.name.endsWith('.pdf')) && (
-          <div className="mt-2 text-sm text-slate-600">
-            📄 {selectedFiles.filter(f => f.name.endsWith('.pdf')).length} PDF file(s) selected
+        {/* PDF file names */}
+        {selectedFiles.length > 0 && selectedFiles.filter(f => f.name.endsWith('.pdf')).map((file, i) => (
+          <div key={i} className="mt-2 text-sm text-slate-600">
+            📄 {file.name}
           </div>
-        )}
+        ))}
         {uploadError && (
-          <div className="text-red-600 text-sm mt-2 font-medium">{uploadError}</div>
+          <div className="text-red-600 text-sm mt-2 font-medium" aria-live="polite">
+            {uploadError}
+          </div>
         )}
       </div>
 

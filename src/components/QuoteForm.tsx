@@ -4,8 +4,23 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import FormFields from './FormFields';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  propertyType: string;
+  zipCode: string;
+  projectType: string;
+  timeline: string;
+  message: string;
+  budget: string;
+  hearAboutUs: string;
+  preferredContact: string;
+  bestTimeToCall: string;
+}
+
 const QuoteForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     phone: '',
