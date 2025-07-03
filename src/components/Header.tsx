@@ -35,9 +35,6 @@ const Header = () => {
               alt="Cerny Remodeling"
               className="h-24 w-auto filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
             />
-            <span className="text-2xl font-semibold text-white font-montserrat">
-              Cerny Remodeling
-            </span>
           </Link>
           
           {/* Desktop Nav */}
