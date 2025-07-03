@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import cernyLogo from "@/assets/cerny-logo.svg";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
             className="flex items-center space-x-3"
           >
             <img
-              src={cernyLogo}
+              src="/lovable-uploads/41ee2dcb-962e-4495-8167-791b4e2f8fd9.png"
               alt="Cerny Remodeling"
               className="h-12 w-auto filter drop-shadow-lg"
             />
