@@ -28,7 +28,7 @@ const About = () => {
               <div className="flex-shrink-0 flex justify-center lg:block mb-8 lg:mb-0">
                 <div className="w-64 h-80 rounded-2xl overflow-hidden bg-black">
                   <img
-                    src="/lovable-uploads/4eb5d1b7-5c12-4617-95b8-73cf65f4e36b.png"
+                    src="/lovable-uploads/faf81f32-e2b0-43f9-b48b-843f10b994d2.png"
                     alt="Josef Cerny, Founder & Lead Technician"
                     className="w-full h-full object-contain"
                   />
