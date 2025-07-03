@@ -24,9 +24,6 @@ const Hero = () => {
         <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-6 font-montserrat">
           From Vision to Reality
         </h1>
-        <p className="text-2xl md:text-3xl font-light text-white/90 drop-shadow max-w-2xl mx-auto mb-8 font-montserrat">
-          Our proven 5-step process ensures your remodeling project exceeds expectations
-        </p>
         <Link
           to="/survey"
           className="relative group overflow-hidden bg-purple-600 px-8 py-4 rounded-full text-white font-semibold shadow-lg transition-all hover:bg-purple-700 font-montserrat"
