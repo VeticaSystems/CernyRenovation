@@ -12,12 +12,12 @@ const Hero = () => {
         paddingTop: '6rem'
       }}
     >
-      {/* Hero Background Image */}
+      {/* Hero Background Image - positioned to showcase walkway and entrance */}
       <img
         src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"
-        alt=""
+        alt="Beautiful home exterior showcasing Cerny Remodeling craftsmanship"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, objectPosition: 'center top 60px' }}
+        style={{ zIndex: 0, objectPosition: 'center top 120px' }}
       />
       {/* Gradient Overlay for Readability */}
       <div 
