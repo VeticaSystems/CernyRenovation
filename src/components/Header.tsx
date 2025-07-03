@@ -27,7 +27,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group cursor-pointer">
             <img 
-              src="/lovable-uploads/e60193fb-5df7-49a0-bdbf-0c7a1f6126b2.png" 
+              src="/lovable-uploads/b9583cff-a331-4a7d-b6c4-04b100bb437a.png" 
               alt="Cerny Remodeling Logo" 
               className="h-7 w-auto"
             />
