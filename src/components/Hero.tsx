@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       className="relative flex items-center justify-center w-full"
       style={{ 
-        height: 'calc(100vh - 4rem)',
+        height: 'calc(100vh - 5rem)',
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
         marginRight: 'calc(-50vw + 50%)',
