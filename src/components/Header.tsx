@@ -31,7 +31,7 @@ const Header = () => {
             className="flex items-center space-x-3"
           >
             <img
-              src="/lovable-uploads/41ee2dcb-962e-4495-8167-791b4e2f8fd9.png"
+              src="/lovable-uploads/189e3b45-c630-4fe9-aa80-3331fea44733.png"
               alt="Cerny Remodeling"
               className="h-12 w-auto filter drop-shadow-lg"
             />
