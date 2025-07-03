@@ -22,7 +22,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black/60 backdrop-blur-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-black/60 backdrop-blur-md z-50 overflow-visible">
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-24">
           {/* Logo */}
@@ -33,7 +33,7 @@ const Header = () => {
             <img
               src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
               alt="Cerny Remodeling"
-              className="h-20 w-auto filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
+              className="h-28 w-auto -my-2 filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
             />
           </Link>
           
