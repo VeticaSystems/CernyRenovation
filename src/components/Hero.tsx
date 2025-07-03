@@ -16,7 +16,7 @@ const Hero = () => {
         src="/lovable-uploads/074251b5-6a3f-461d-a1c3-523ebce91a73.png"
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0, objectPosition: 'center 25%' }}
+        style={{ zIndex: 0, objectPosition: 'center top' }}
       />
       {/* Gradient Overlay for Readability */}
       <div 
