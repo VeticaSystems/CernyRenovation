@@ -76,7 +76,7 @@ const Index = () => {
       <section className="relative w-full min-h-screen flex items-center justify-center">
         {/* Bright, uncropped house image - hero */}
         <img
-          src="/lovable-uploads/cerny-hero-FULL-bright.png"
+          src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
           alt="Beautiful home entrance"
           className="absolute inset-0 w-full h-full object-contain bg-black"
           style={{
