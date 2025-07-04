@@ -73,7 +73,7 @@ const Index = () => {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen flex items-center justify-center">
+      <section className="relative w-full min-h-screen flex items-center justify-center pt-24">
         {/* Bright, uncropped house image - hero */}
         <img
           src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
@@ -88,7 +88,7 @@ const Index = () => {
       </section>
 
       {/* REST OF PAGE SECTIONS */}
-      <main>
+      <main className="relative z-10 bg-white">
         <ProcessSection />
         <ContactForm />
       </main>
