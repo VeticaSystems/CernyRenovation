@@ -25,7 +25,7 @@ const Index = () => {
           {/* Logo in header only */}
           <Link to="/" className="flex items-center">
             <img
-              src="/lovable-uploads/efb50f74-e1b0-4253-a619-8ab8490e82e2.png"
+              src="/josef owner image.png"
               alt="Cerny Remodeling – Insured & Licensed"
               className="h-20 md:h-24 w-auto"
               draggable={false}
@@ -74,11 +74,11 @@ const Index = () => {
 
       {/* HERO SECTION */}
       <section className="relative w-full min-h-screen flex items-center justify-center pt-24">
-        {/* Bright, uncropped house image - hero */}
+        {/* House image - hero */}
         <img
-          src="/lovable-uploads/c57fd54a-9f9f-4ed9-99e3-adc6ef35bdb6.png"
+          src="/Main House image with sidewalk"
           alt="Beautiful home entrance"
-          className="absolute inset-0 w-full h-full object-contain bg-black"
+          className="absolute inset-0 w-full h-full object-cover bg-black"
           style={{
             objectPosition: "center center",
             zIndex: 0,
