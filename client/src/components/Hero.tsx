@@ -14,7 +14,7 @@ const Hero = () => {
     >
       {/* Hero Background Image - positioned to showcase walkway and entrance */}
       <img
-        src="@assets/ChatGPT Image Jun 27, 2025, 03_24_12 PM (1)_1754617114537.png"
+        src="/hero-house.png"
         alt="Beautiful walkway and entrance showcasing Cerny Remodeling craftsmanship"
         className="absolute inset-0 w-full h-full object-contain"
         style={{ zIndex: 0 }}
