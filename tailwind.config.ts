@@ -11,13 +11,6 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        // Custom Cerny color scheme
-        'cerny-orange': '#FF6B35',
-        'cerny-orange-dark': '#E85A2B',
-        'light-purple': '#6B46C1',
-        'tenorite': '#4B5563',
-        'cerny-light-gray': '#F3F4F6',
-        
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
