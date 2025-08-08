@@ -9,7 +9,7 @@ const Hero = () => {
         width: '100vw',
         marginLeft: 'calc(-50vw + 50%)',
         marginRight: 'calc(-50vw + 50%)',
-        paddingTop: '6rem'
+        marginTop: '6rem'
       }}
     >
       {/* Hero Background Image - positioned to showcase walkway and entrance */}
