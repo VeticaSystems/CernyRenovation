@@ -42,7 +42,7 @@ const placeholder =
   "https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=facearea&w=720&h=400&q=80";
 
 const Decking = () => (
-  <main className="container mx-auto py-12 px-4">
+  <main className="container mx-auto pt-32 pb-12 px-4">
     <h1 className="text-3xl font-bold text-light-purple mb-6 font-montserrat">
       Decking & Patio Portfolio
     </h1>
