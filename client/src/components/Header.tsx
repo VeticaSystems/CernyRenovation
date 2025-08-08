@@ -30,14 +30,12 @@ const Header = () => {
             to="/"
             className="flex items-center space-x-5"
           >
-            <div className="text-white">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-                <span className="text-white">CERNY</span>
-              </div>
-              <div className="text-sm sm:text-base md:text-lg font-medium tracking-widest text-white/90 -mt-1">
-                REMODELING
-              </div>
-            </div>
+            <img
+              src="/cerny-logo.png"
+              alt="Cerny Remodeling - Licensed & Insured Home Remodeling"
+              className="h-16 sm:h-20 md:h-24 w-auto filter drop-shadow-lg"
+              style={{ zIndex: 20 }}
+            />
           </Link>
           
           {/* Desktop Nav */}
