@@ -29,20 +29,20 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row gap-6 text-sm">
           <div className="text-center sm:text-left">
             <span className="text-white/80">Phone: </span>
-            <span className="font-semibold text-cerny-orange">(651) 278-4835</span>
+            <span className="font-semibold text-orange-400">703.861.7039</span>
           </div>
           <div className="text-center sm:text-left">
             <span className="text-white/80">Email: </span>
-            <span className="font-semibold text-cerny-orange">info@cernyremodeling.com</span>
+            <span className="font-semibold text-orange-400">info@cernyremodeling.com</span>
           </div>
           <div className="text-center sm:text-left">
-            <span className="font-semibold text-green-400">Licensed & Insured ✓</span>
+            <span className="font-semibold text-green-400">Licensed - Bonded - Insured</span>
           </div>
         </div>
         
         {/* Legal + Socials */}
         <div className="flex flex-col sm:flex-row items-center gap-6 text-sm text-white/60">
-          <div>&copy; {new Date().getFullYear()} Cerny Remodeling LLC. All rights reserved.</div>
+          <div>&copy; 2013 Cerny Home Remodeling LLC</div>
           <div className="flex gap-4">
             <a
               href="#"
