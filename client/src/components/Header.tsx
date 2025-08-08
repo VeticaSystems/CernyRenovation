@@ -30,13 +30,14 @@ const Header = () => {
             to="/"
             className="flex items-center space-x-5"
           >
-            {/* Responsive logo sizing - larger on desktop, mobile-friendly */}
-            <img
-              src="/lovable-uploads/284bbb2d-843f-467d-95f6-a7e5479acc79.png"
-              alt="Cerny Remodeling - Licensed & Insured Home Remodeling"
-              className="h-20 sm:h-24 md:h-32 w-auto -my-2 sm:-my-3 md:-my-4 filter drop-shadow-[0_4px_16px_rgba(0,64,0,0.18)]"
-              style={{ zIndex: 20 }}
-            />
+            <div className="text-white">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+                <span className="text-white">CERNY</span>
+              </div>
+              <div className="text-sm sm:text-base md:text-lg font-medium tracking-widest text-white/90 -mt-1">
+                REMODELING
+              </div>
+            </div>
           </Link>
           
           {/* Desktop Nav */}
